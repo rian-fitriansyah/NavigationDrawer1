@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\ASUS\Documents\Rian&apos;s Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\ASUS\Documents\Rian&apos;s Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-abdc7ac30acc4befd51140562bb560bb675ef43e.jar" />
+    </item>
+    <item
+        jar="C:\Users\ASUS\AndroidStudioProjects\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\ASUS\Documents\Rian&apos;s Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-f7996f08aba7db191155f935127e26d7f852699c.jar" />
+    </item>
+    <item
+        jar="C:\Users\ASUS\Documents\Rian&apos;s Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\ASUS\Documents\Rian&apos;s Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\build\intermediates\pre-dexed\debug\classes-4f49b95d89d510b89ca23fdaee2e12d52eb98b64.jar" />
+    </item>
+
+</items>
