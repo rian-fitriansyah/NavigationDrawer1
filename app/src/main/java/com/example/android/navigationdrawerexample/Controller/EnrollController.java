@@ -44,6 +44,7 @@ public class EnrollController extends Activity{
     private String username;
     private ArrayList<CheckBox> addKelas = new ArrayList<CheckBox>();
     private ArrayList<Kelas> pilihan = new ArrayList<Kelas>();
+    SessionManager session;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,9 @@ public class EnrollController extends Activity{
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        this.username = getIntent().getStringExtra("Username");
+        session = new SessionManager(getApplicationContext());
+        HashMap<String, String> detailMahasiswa = session.getUserDetails();
+        this.username = detailMahasiswa.get("username");
 
         setContentView(R.layout.add_enroll);
         linearMain = (LinearLayout) findViewById(R.id.container);
