@@ -365,34 +365,41 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                         else
                             buat.setVisibility(View.VISIBLE);
 
-                        new GetAllJadwalTask().execute(username);
+                        new GetAllJadwalTask(PilihanController.this).execute(username);
 
-                        GetAllJadwalListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        GetAllJadwalListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+
                             @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+                                GetAllJadwalListView.expandGroup(groupPosition);
+                                return true;
+                            }
+                        });
+
+                        GetAllJadwalListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+
+                            @Override
+                            public boolean onChildClick(ExpandableListView parent, View v,
+                                                        int groupPosition, int childPosition, long id) {
                                 try {
-                                    // GEt the customer which was clicked
-                                    JSONObject mahasiswaClicked = jsonArray.getJSONObject(position);
-                                    int jadwalp = mahasiswaClicked.getInt("Id");
-                                    int kelasp = mahasiswaClicked.getInt("Id_kelas");
-
-//                        Toast.makeText(getApplicationContext(), "-j=" + jadwalp + "-k=" + kelasp
-//                                , Toast.LENGTH_LONG).show();
-
-                                    // Send Customer ID
+                                    //Toast.makeText(getApplicationContext(), listDataChild2.get(listDataHeader2.get(groupPosition)).get(childPosition).toString(), Toast.LENGTH_LONG).show();
+                                    int jadwalp = listDataChild2.get(listDataHeader2.get(groupPosition)).get(childPosition).getInt("Id");
+                                    int kelasp = listDataChild2.get(listDataHeader2.get(groupPosition)).get(childPosition).getInt("Id_kelas");
+////                                    JSONObject mahasiswaClicked = jsonArray.getJSONObject(groupPosition+childPosition);
+////                                    int jadwalp = mahasiswaClicked.getInt("Id");
+////                                    int kelasp = mahasiswaClicked.getInt("Id_kelas");
                                     Intent showDetails = new Intent(getActivity(), JadwalController.class);
                                     showDetails.putExtra("JadwalID", jadwalp);
                                     showDetails.putExtra("KelasID", kelasp);
                                     showDetails.putExtra("Username", username);
                                     showDetails.putExtra("View", "detailJadwal");
-
-                                    //Toast.makeText(getApplicationContext(), "seharusnya abis ini ke detail", Toast.LENGTH_LONG).show();
-
                                     startActivity(showDetails);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
+                                    //Toast.makeText(getApplicationContext(), "lala masuk ex", Toast.LENGTH_LONG).show();
                                 }
+                                return false;
                             }
                         });
 
@@ -411,11 +418,6 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                         });
                         return view;
                     }
-
-//                    public  void setListAdapter(JSONArray jsonArray) {
-//                        this.jsonArray = jsonArray;
-//                        this.GetAllJadwalListView.setAdapter(new ListJadwalAdapter(jsonArray, getActivity()));
-//                    }
                 };
                 args.putString(FragmentOne.ITEM_NAME, dataList.get(position)
                         .getItemName());
@@ -432,7 +434,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                     @Override
                     public void onResume() {
                         super.onResume();
-                        new GetAllEnrollTask().execute(username);
+                        new GetAllEnrollTask(PilihanController.this).execute(username);
                     }
 
                     @Override
@@ -445,7 +447,26 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
                         //GetAllEnrollListView = (ListView) view.findViewById(R.id.GetAllJadwalListView);
                         ImageView enroll = (ImageView) view.findViewById(R.id.button);
-                        new GetAllEnrollTask().execute(username);
+                        expListView = (ExpandableListView) view.findViewById(R.id.lvExp);
+
+                        new GetAllEnrollTask(PilihanController.this).execute(username);
+
+                        expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+
+                            @Override
+                            public boolean onChildClick(ExpandableListView parent, View v,
+                                                        int groupPosition, int childPosition, long id) {
+                                //asumsikan kalo dipencet bisa ngeluarin infromasi asistennya
+                                //viewnya di view_profile_personal
+                                //kelasnya inten, nah loh pake controller mana nih??
+                                //asumsikan gue punya kelas ProfileAsdos.java
+                                String userAsdos = listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition);
+                                Intent showDetails = new Intent(getActivity(), MenjabatController.class);
+                                showDetails.putExtra("Username", userAsdos);
+                                startActivity(showDetails);
+                                return false;
+                            }
+                        });
 
                         enroll.setOnClickListener(new View.OnClickListener() {
 
@@ -453,7 +474,6 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                             public void onClick(View v) {
 
                                 Intent showDetails = new Intent(getActivity(), EnrollController.class);
-                                //asumsi username gak null
                                 showDetails.putExtra("Username", username);
                                 startActivity(showDetails);
                             }
@@ -502,8 +522,8 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                 args.putInt("role", 3);
                 break;
             case 4:
-                ProfileController profileController2 = new ProfileController(username);
-                if(profileController2.cekAdmin()) {
+                //ProfileController profileController2 = new ProfileController(username);
+                if(role == 2) {
                     fragment = new Fragment() {
 
                         @Override
@@ -517,6 +537,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                             //GetAllEnrollListView = (ListView) view.findViewById(R.id.GetAllJadwalListView);
                             Button kelas = (Button) view.findViewById(R.id.button9);
                             Button role = (Button) view.findViewById(R.id.button10);
+                            Button database = (Button) view.findViewById(R.id.button11);
 
                             kelas.setOnClickListener(new View.OnClickListener() {
 
@@ -530,7 +551,6 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                                     startActivity(showDetails);
                                 }
                             });
-
                             role.setOnClickListener(new View.OnClickListener() {
 
                                 @Override
@@ -539,6 +559,15 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                                     Intent showDetails = new Intent(getActivity(), RoleController.class);
                                     //asumsi username gak null
                                     showDetails.putExtra("Username", username);
+                                    startActivity(showDetails);
+                                }
+                            });
+                            database.setOnClickListener(new View.OnClickListener() {
+
+                                @Override
+                                public void onClick(View v) {
+
+                                    Intent showDetails = new Intent(getActivity(), Database.class);
                                     startActivity(showDetails);
                                 }
                             });
@@ -575,7 +604,16 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         getActionBar().setTitle(mTitle);
     }
 
-    private class GetAllJadwalTask extends AsyncTask<String, Long, JSONArray> {
+private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
+    {
+        private ProgressDialog dialog;
+        private PilihanController activity;
+
+        public GetAllJadwalTask(PilihanController activity) {
+            this.activity = activity;
+            dialog = new ProgressDialog(activity);
+        }
+
         @Override
         protected JSONArray doInBackground(String... params) {
 
@@ -585,16 +623,110 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
             return (jsonParser.getJSONArrayFromUrl(url));
         }
 
+        protected void onPreExecute() {
+            this.dialog.setMessage("Sedang mengambil data...");
+            this.dialog.show();
+            this.dialog.setCancelable(false);
+        }
+
         @Override
         protected void onPostExecute(JSONArray jsonArray) {
-            if (jsonArray != null)
-                setListAdapter(jsonArray);
+            listDataHeader2 = new ArrayList<String>();
+            listDataChild2 = new HashMap<String, List<JSONObject>>();
+            try {
+                int i = 0;
+                if(jsonArray != null) {
+                    while (i < jsonArray.length()) {
+                        JSONObject ob = jsonArray.getJSONObject(i);
+                        String tanggal = ob.getString("Tanggal");
+
+                        List<JSONObject> listChild = new ArrayList<JSONObject>();
+                        while (i < jsonArray.length() && tanggal.equals(jsonArray.getJSONObject(i).getString("Tanggal"))) {
+                            listChild.add(jsonArray.getJSONObject(i));
+                            //Toast.makeText(getApplicationContext(), i + "", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(), jsonArray.getJSONObject(i).getString("Tanggal"), Toast.LENGTH_LONG).show();
+                            i++;
+                        }
+                        String[] tgl = tanggal.split("-");
+                        tanggal = tgl[2] + "-" + tgl[1] + "-" + tgl[0];
+                        listDataHeader2.add(tanggal);
+                        listDataChild2.put(tanggal, listChild);
+                    }
+                }//Toast.makeText(getApplicationContext(), "keluar while luar", Toast.LENGTH_LONG).show();
+            } catch(JSONException e){
+                e.printStackTrace();
+                //Toast.makeText(getApplicationContext(), "lalala masuk ex", Toast.LENGTH_LONG).show();
+            }
+            ExpandableListAdapter listAdapter = new ExpandableJadwalAdapter(PilihanController.this, listDataHeader2, listDataChild2);
+            GetAllJadwalListView.setAdapter(listAdapter);
+//            Toast.makeText(getApplicationContext(), "luar for", Toast.LENGTH_LONG).show();
+            for(int j=0; j<listDataHeader2.size(); j++){
+                //Toast.makeText(getApplicationContext(), "dalem for", Toast.LENGTH_LONG).show();
+                GetAllJadwalListView.expandGroup(j);
+            }
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
         }
     }
 
-    public void setListAdapter(JSONArray jsonArray) {
+    public  void setListAdapterJadwal(JSONArray jsonArray) {
         this.jsonArray = jsonArray;
         this.GetAllJadwalListView.setAdapter(new ListJadwalAdapter(jsonArray, this));
+    }
+
+    private class GetAllEnrollTask extends AsyncTask<String,Long,JSONArray>
+    {
+        private ProgressDialog dialog;
+        private PilihanController activity;
+
+        public GetAllEnrollTask(PilihanController activity) {
+            this.activity = activity;
+            dialog = new ProgressDialog(activity);
+        }
+
+        @Override
+        protected JSONArray doInBackground(String... params) {
+            // it is executed on Background thread
+            JSONParser jsonParser = new JSONParser();
+            //kalo sempet hasil keluaran enrollList didikitin
+            String url = "http://ppl-a08.cs.ui.ac.id/enroll.php?fun=enrollList&username=" + params[0];
+            jsonArray = (jsonParser.getJSONArrayFromUrl(url));
+            return jsonArray;
+        }
+
+        protected void onPreExecute() {
+            this.dialog.setMessage("Sedang mengambil data...");
+            this.dialog.show();
+            this.dialog.setCancelable(false);
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+            listDataHeader = new ArrayList<String>();
+            listDataChild = new HashMap<String, List<String>>();
+            //String k = "";
+
+            try {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject ob = jsonArray.getJSONObject(i);
+                    String kelas = ob.getString("Nama");
+                    //k=kelas;
+                    listDataHeader.add(kelas);
+                    List<String> listChild = (new EnrollController()).getAllAsdosKelas(ob.getInt("Id"));
+                    listDataChild.put(kelas, listChild);
+                }
+            } catch(JSONException e){
+                e.printStackTrace();
+                //Toast.makeText(getApplicationContext(), k, Toast.LENGTH_LONG).show();
+            }
+
+            ExpandableListAdapter listAdapter = new ExpandableEnrollAdapter(PilihanController.this, listDataHeader, listDataChild, username);
+            expListView.setAdapter(listAdapter);
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        }
     }
 
     /**
