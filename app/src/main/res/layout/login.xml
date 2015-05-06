@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/backgroundlogin">
+        android:background="@drawable/backgroundnew">
 
         <LinearLayout android:id="@+id/header"
             android:layout_width="fill_parent"
@@ -103,9 +103,7 @@
                         android:layout_marginTop="10dip"
                         android:background="@color/twitter_blue"/>
 
-                    <EditText
-                        android:id="@+id/pass"
-                        android:layout_width="fill_parent"
+                    <EditText android:layout_width="fill_parent"
                         android:layout_height="30dp"
                         android:layout_marginTop="10dip"
                         android:singleLine="true"
@@ -113,6 +111,7 @@
                         android:hint="password"
                         android:paddingLeft="8dp"
                         android:textSize="16dp"
+                        android:id="@+id/editText9"
                         android:background="@color/white"/>
                 </LinearLayout>
 

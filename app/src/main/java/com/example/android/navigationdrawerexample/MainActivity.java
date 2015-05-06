@@ -17,16 +17,26 @@
 package com.example.android.navigationdrawerexample;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.example.android.navigationdrawerexample.Controller.JSONParser;
 import com.example.android.navigationdrawerexample.Controller.PilihanController;
+import com.example.android.navigationdrawerexample.Controller.ProfileController;
+import com.example.android.navigationdrawerexample.Controller.SessionManager;
+import com.example.android.navigationdrawerexample.Model.Mahasiswa;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     EditText username, password;
@@ -59,7 +69,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 

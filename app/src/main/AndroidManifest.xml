@@ -98,8 +98,30 @@
             android:name=".Controller.DetailReqController"
             android:label="@string/title_activity_detail_req_controller" >
         </activity>
+        <activity
+            android:name=".Controller.RoleController"
+            android:label="SIASIS" />
+        <activity
+            android:name=".Controller.KelasController"
+            android:label="SIASIS" />
+        <activity
+            android:name=".ForumPolling"
+            android:label="@string/title_activity_forum_polling" >
+        </activity>
+        <activity
+            android:name=".Controller.PollingController"
+            android:label="@string/title_activity_polling_controller"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".Controller.DetailPolController"
+            android:label="DetailPollingController">
+        </activity>
+        <activity android:label="SIASIS" android:name=".Controller.ProfileController"/>
+        <activity android:label="SIASIS" android:name=".Controller.MenjabatController"/>
         <activity android:label="SIASIS" android:name=".Controller.RoleController"/>
         <activity android:label="SIASIS" android:name=".Controller.KelasController"/>
+        <activity android:label="SIASIS" android:name=".Controller.Database"/>
     </application>
 
 </manifest>

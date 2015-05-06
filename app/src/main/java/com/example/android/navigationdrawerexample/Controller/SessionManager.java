@@ -1,14 +1,13 @@
-package com.example.android.navigationdrawer1.Controller;
+package com.example.android.navigationdrawerexample.Controller;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.Context;
 import android.content.SharedPreferences.Editor;
 
-import com.example.android.navigationdrawer1.MainActivity;
+import com.example.android.navigationdrawerexample.MainActivity;
 
 import java.util.HashMap;
-import java.util.Set;
 
 public class SessionManager {
     // Shared Preferences

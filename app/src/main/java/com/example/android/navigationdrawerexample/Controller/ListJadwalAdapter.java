@@ -30,7 +30,6 @@ public class ListJadwalAdapter extends BaseAdapter {
         this.dataArray = jsonArray;
         this.activity = a;
 
-
         inflater = (LayoutInflater) this.activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -106,8 +105,6 @@ public class ListJadwalAdapter extends BaseAdapter {
         private TextView Tanggal;
         private TextView Waktu;
         private TextView Ruangan;
-
         private ImageView mobile;
-
     }
 }

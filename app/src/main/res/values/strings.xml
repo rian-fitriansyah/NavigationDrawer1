@@ -67,4 +67,6 @@
     <string name="title_activity_forum_q">ForumQA</string>
     <string name="title_activity_detail_qacontroller">DetailQAController</string>
     <string name="title_activity_detail_req_controller">DetailReqController</string>
+    <string name="title_activity_forum_polling">ForumPolling</string>
+    <string name="title_activity_polling_controller">PollingController</string>
 </resources>

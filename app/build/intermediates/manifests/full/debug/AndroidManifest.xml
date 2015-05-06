@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2013 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.navigationdrawerexample"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="21" />
+
+    <application
+        android:icon="@drawable/ic_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.android.navigationdrawerexample.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.QAController"
+            android:label="@string/title_activity_qacontroller" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.FormQA"
+            android:label="@string/title_activity_form_q" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.ViewPicture"
+            android:label="@string/title_activity_edit_picture" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.EditPicture"
+            android:label="@string/title_activity_edit_picture" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.RequestRole"
+            android:label="@string/title_activity_request_role" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.ForumRequest"
+            android:label="@string/title_activity_forum_request" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.RequestController"
+            android:label="@string/title_activity_request_controller" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.JadwalController"
+            android:label="Jadwal Asistensi" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.PilihanController"
+            android:label="SIASIS" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.ForumQA"
+            android:label="@string/title_activity_forum_q" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.EnrollController"
+            android:label="SIASIS" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.DetailQAController"
+            android:label="@string/title_activity_detail_qacontroller" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.DetailReqController"
+            android:label="@string/title_activity_detail_req_controller" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.RoleController"
+            android:label="SIASIS" />
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.KelasController"
+            android:label="SIASIS" />
+        <activity
+            android:name="com.example.android.navigationdrawerexample.ForumPolling"
+            android:label="@string/title_activity_forum_polling" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.PollingController"
+            android:label="@string/title_activity_polling_controller"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.DetailPolController"
+            android:label="DetailPollingController" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.ProfileController"
+            android:label="SIASIS" />
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.MenjabatController"
+            android:label="SIASIS" />
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.RoleController"
+            android:label="SIASIS" />
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.KelasController"
+            android:label="SIASIS" />
+        <activity
+            android:name="com.example.android.navigationdrawerexample.Controller.Database"
+            android:label="SIASIS" />
+    </application>
+
+</manifest>

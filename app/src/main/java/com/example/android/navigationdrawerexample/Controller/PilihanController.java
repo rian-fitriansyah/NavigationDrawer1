@@ -21,6 +21,7 @@ import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -44,6 +45,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -78,6 +81,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class PilihanController extends Activity implements ConfirmProfile.ConfirmProfileListener{
@@ -94,18 +98,31 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
     private int count;
 
-    private String username;
-
     Button fetch;
     TextView text;
     EditText et;
 
     List<DrawerItem> dataList;
 
-    private ListView GetAllJadwalListView, ListRole;
+    private ListView ListRole;
     private JSONArray jsonArray;
-    private View view,rootView;
+    private View rootView;
     Mahasiswa mahasiswa;
+
+    private String username;
+    private int role;
+
+    private ExpandableListView GetAllJadwalListView;
+    private View view;
+
+    private ExpandableListView expListView;
+    private List<String> listDataHeader;
+    private HashMap<String, List<String>> listDataChild;
+    private List<String> listDataHeader2;
+    private HashMap<String, List<JSONObject>> listDataChild2;
+    private HashMap<String, String> detailMahasiswa;
+
+    SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +132,10 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        this.username = getIntent().getStringExtra("Username");
+        session = new SessionManager(getApplicationContext());
+        this.detailMahasiswa = session.getUserDetails();
+        this.username = detailMahasiswa.get("username");
+        this.role = Integer.parseInt(detailMahasiswa.get("role"));
 
         mTitle = mDrawerTitle = getTitle();
         mPlanetTitles = getResources().getStringArray(R.array.planets_array);
@@ -180,9 +200,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         if (fragment.getArguments().getInt("role")==1){
             /*SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.profile_pref),
                     MODE_PRIVATE);
-
             String defaultS = "";
-
             String path = sharedPreferences.getString(getString(R.string.path_foto), defaultS);*/
             ProfileController profileController = new ProfileController(username);
 
@@ -202,14 +220,14 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
     /* Called whenever we call invalidateOptionsMenu() */
     /**
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        // If the nav drawer is open, hide action items related to the content view
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
-        return super.onPrepareOptionsMenu(menu);
-    }
-    */
+     @Override
+     public boolean onPrepareOptionsMenu(Menu menu) {
+     // If the nav drawer is open, hide action items related to the content view
+     boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+     menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
+     return super.onPrepareOptionsMenu(menu);
+     }
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // The action bar home/up action should open or close the drawer.
@@ -324,22 +342,12 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
         switch (position) {
             case 0:
-                ProfileController profileController = new ProfileController(username);
-                int status = 0;
-
-                if(profileController.punyaProfile()) {
-                    profileController.addMahasiswa(username);
-                } else if(profileController.cekAsdos()) {
-                    status = 1;
-                } else if(profileController.cekAdmin()) {
-                    status = 2;
-                }
-                final int finalStatus = status;
+                final int finalStatus = role;
                 fragment = new Fragment(){
                     @Override
                     public void onResume() {
                         super.onResume();
-                        new GetAllJadwalTask().execute(username);
+                        new GetAllJadwalTask(PilihanController.this).execute(username);
                     }
 
                     @Override
@@ -349,7 +357,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                         StrictMode.setThreadPolicy(policy);
 
                         View view = inflater.inflate(R.layout.list_jadwal, container, false);
-                        GetAllJadwalListView = (ListView) view.findViewById(R.id.GetAllJadwalListView);
+                        GetAllJadwalListView = (ExpandableListView) view.findViewById(R.id.GetAllJadwalListView);
                         ImageView buat = (ImageView) view.findViewById(R.id.button);
                         //Button pilihan = (Button) view.findViewById(R.id.button9);
                         if(finalStatus == 0)
@@ -357,34 +365,41 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                         else
                             buat.setVisibility(View.VISIBLE);
 
-                        new GetAllJadwalTask().execute(username);
+                        new GetAllJadwalTask(PilihanController.this).execute(username);
 
-                        GetAllJadwalListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        GetAllJadwalListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+
                             @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+                                GetAllJadwalListView.expandGroup(groupPosition);
+                                return true;
+                            }
+                        });
+
+                        GetAllJadwalListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+
+                            @Override
+                            public boolean onChildClick(ExpandableListView parent, View v,
+                                                        int groupPosition, int childPosition, long id) {
                                 try {
-                                    // GEt the customer which was clicked
-                                    JSONObject mahasiswaClicked = jsonArray.getJSONObject(position);
-                                    int jadwalp = mahasiswaClicked.getInt("Id");
-                                    int kelasp = mahasiswaClicked.getInt("Id_kelas");
-
-//                        Toast.makeText(getApplicationContext(), "-j=" + jadwalp + "-k=" + kelasp
-//                                , Toast.LENGTH_LONG).show();
-
-                                    // Send Customer ID
+                                    //Toast.makeText(getApplicationContext(), listDataChild2.get(listDataHeader2.get(groupPosition)).get(childPosition).toString(), Toast.LENGTH_LONG).show();
+                                    int jadwalp = listDataChild2.get(listDataHeader2.get(groupPosition)).get(childPosition).getInt("Id");
+                                    int kelasp = listDataChild2.get(listDataHeader2.get(groupPosition)).get(childPosition).getInt("Id_kelas");
+////                                    JSONObject mahasiswaClicked = jsonArray.getJSONObject(groupPosition+childPosition);
+////                                    int jadwalp = mahasiswaClicked.getInt("Id");
+////                                    int kelasp = mahasiswaClicked.getInt("Id_kelas");
                                     Intent showDetails = new Intent(getActivity(), JadwalController.class);
                                     showDetails.putExtra("JadwalID", jadwalp);
                                     showDetails.putExtra("KelasID", kelasp);
                                     showDetails.putExtra("Username", username);
                                     showDetails.putExtra("View", "detailJadwal");
-
-                                    //Toast.makeText(getApplicationContext(), "seharusnya abis ini ke detail", Toast.LENGTH_LONG).show();
-
                                     startActivity(showDetails);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
+                                    //Toast.makeText(getApplicationContext(), "lala masuk ex", Toast.LENGTH_LONG).show();
                                 }
+                                return false;
                             }
                         });
 
@@ -403,11 +418,6 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                         });
                         return view;
                     }
-
-//                    public  void setListAdapter(JSONArray jsonArray) {
-//                        this.jsonArray = jsonArray;
-//                        this.GetAllJadwalListView.setAdapter(new ListJadwalAdapter(jsonArray, getActivity()));
-//                    }
                 };
                 args.putString(FragmentOne.ITEM_NAME, dataList.get(position)
                         .getItemName());
@@ -424,7 +434,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                     @Override
                     public void onResume() {
                         super.onResume();
-                        new GetAllEnrollTask().execute(username);
+                        new GetAllEnrollTask(PilihanController.this).execute(username);
                     }
 
                     @Override
@@ -437,7 +447,26 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
                         //GetAllEnrollListView = (ListView) view.findViewById(R.id.GetAllJadwalListView);
                         ImageView enroll = (ImageView) view.findViewById(R.id.button);
-                        new GetAllEnrollTask().execute(username);
+                        expListView = (ExpandableListView) view.findViewById(R.id.lvExp);
+
+                        new GetAllEnrollTask(PilihanController.this).execute(username);
+
+                        expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+
+                            @Override
+                            public boolean onChildClick(ExpandableListView parent, View v,
+                                                        int groupPosition, int childPosition, long id) {
+                                //asumsikan kalo dipencet bisa ngeluarin infromasi asistennya
+                                //viewnya di view_profile_personal
+                                //kelasnya inten, nah loh pake controller mana nih??
+                                //asumsikan gue punya kelas ProfileAsdos.java
+                                String userAsdos = listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition);
+                                Intent showDetails = new Intent(getActivity(), MenjabatController.class);
+                                showDetails.putExtra("Username", userAsdos);
+                                startActivity(showDetails);
+                                return false;
+                            }
+                        });
 
                         enroll.setOnClickListener(new View.OnClickListener() {
 
@@ -445,7 +474,6 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                             public void onClick(View v) {
 
                                 Intent showDetails = new Intent(getActivity(), EnrollController.class);
-                                //asumsi username gak null
                                 showDetails.putExtra("Username", username);
                                 startActivity(showDetails);
                             }
@@ -494,8 +522,8 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                 args.putInt("role", 3);
                 break;
             case 4:
-                ProfileController profileController2 = new ProfileController(username);
-                if(profileController2.cekAdmin()) {
+                //ProfileController profileController2 = new ProfileController(username);
+                if(role == 2) {
                     fragment = new Fragment() {
 
                         @Override
@@ -509,6 +537,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                             //GetAllEnrollListView = (ListView) view.findViewById(R.id.GetAllJadwalListView);
                             Button kelas = (Button) view.findViewById(R.id.button9);
                             Button role = (Button) view.findViewById(R.id.button10);
+                            Button database = (Button) view.findViewById(R.id.button11);
 
                             kelas.setOnClickListener(new View.OnClickListener() {
 
@@ -522,7 +551,6 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                                     startActivity(showDetails);
                                 }
                             });
-
                             role.setOnClickListener(new View.OnClickListener() {
 
                                 @Override
@@ -531,6 +559,15 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                                     Intent showDetails = new Intent(getActivity(), RoleController.class);
                                     //asumsi username gak null
                                     showDetails.putExtra("Username", username);
+                                    startActivity(showDetails);
+                                }
+                            });
+                            database.setOnClickListener(new View.OnClickListener() {
+
+                                @Override
+                                public void onClick(View v) {
+
+                                    Intent showDetails = new Intent(getActivity(), Database.class);
                                     startActivity(showDetails);
                                 }
                             });
@@ -567,7 +604,16 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         getActionBar().setTitle(mTitle);
     }
 
-    private class GetAllJadwalTask extends AsyncTask<String, Long, JSONArray> {
+    private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
+    {
+        private ProgressDialog dialog;
+        private PilihanController activity;
+
+        public GetAllJadwalTask(PilihanController activity) {
+            this.activity = activity;
+            dialog = new ProgressDialog(activity);
+        }
+
         @Override
         protected JSONArray doInBackground(String... params) {
 
@@ -577,16 +623,110 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
             return (jsonParser.getJSONArrayFromUrl(url));
         }
 
+        protected void onPreExecute() {
+            this.dialog.setMessage("Sedang mengambil data...");
+            this.dialog.show();
+            this.dialog.setCancelable(false);
+        }
+
         @Override
         protected void onPostExecute(JSONArray jsonArray) {
-            if (jsonArray != null)
-                setListAdapter(jsonArray);
+            listDataHeader2 = new ArrayList<String>();
+            listDataChild2 = new HashMap<String, List<JSONObject>>();
+            try {
+                int i = 0;
+                if(jsonArray != null) {
+                    while (i < jsonArray.length()) {
+                        JSONObject ob = jsonArray.getJSONObject(i);
+                        String tanggal = ob.getString("Tanggal");
+
+                        List<JSONObject> listChild = new ArrayList<JSONObject>();
+                        while (i < jsonArray.length() && tanggal.equals(jsonArray.getJSONObject(i).getString("Tanggal"))) {
+                            listChild.add(jsonArray.getJSONObject(i));
+                            //Toast.makeText(getApplicationContext(), i + "", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(), jsonArray.getJSONObject(i).getString("Tanggal"), Toast.LENGTH_LONG).show();
+                            i++;
+                        }
+                        String[] tgl = tanggal.split("-");
+                        tanggal = tgl[2] + "-" + tgl[1] + "-" + tgl[0];
+                        listDataHeader2.add(tanggal);
+                        listDataChild2.put(tanggal, listChild);
+                    }
+                }//Toast.makeText(getApplicationContext(), "keluar while luar", Toast.LENGTH_LONG).show();
+            } catch(JSONException e){
+                e.printStackTrace();
+                //Toast.makeText(getApplicationContext(), "lalala masuk ex", Toast.LENGTH_LONG).show();
+            }
+            ExpandableListAdapter listAdapter = new ExpandableJadwalAdapter(PilihanController.this, listDataHeader2, listDataChild2);
+            GetAllJadwalListView.setAdapter(listAdapter);
+//            Toast.makeText(getApplicationContext(), "luar for", Toast.LENGTH_LONG).show();
+            for(int j=0; j<listDataHeader2.size(); j++){
+                //Toast.makeText(getApplicationContext(), "dalem for", Toast.LENGTH_LONG).show();
+                GetAllJadwalListView.expandGroup(j);
+            }
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
         }
     }
 
-    public void setListAdapter(JSONArray jsonArray) {
+    public  void setListAdapterJadwal(JSONArray jsonArray) {
         this.jsonArray = jsonArray;
         this.GetAllJadwalListView.setAdapter(new ListJadwalAdapter(jsonArray, this));
+    }
+
+    private class GetAllEnrollTask extends AsyncTask<String,Long,JSONArray>
+    {
+        private ProgressDialog dialog;
+        private PilihanController activity;
+
+        public GetAllEnrollTask(PilihanController activity) {
+            this.activity = activity;
+            dialog = new ProgressDialog(activity);
+        }
+
+        @Override
+        protected JSONArray doInBackground(String... params) {
+            // it is executed on Background thread
+            JSONParser jsonParser = new JSONParser();
+            //kalo sempet hasil keluaran enrollList didikitin
+            String url = "http://ppl-a08.cs.ui.ac.id/enroll.php?fun=enrollList&username=" + params[0];
+            jsonArray = (jsonParser.getJSONArrayFromUrl(url));
+            return jsonArray;
+        }
+
+        protected void onPreExecute() {
+            this.dialog.setMessage("Sedang mengambil data...");
+            this.dialog.show();
+            this.dialog.setCancelable(false);
+        }
+
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+            listDataHeader = new ArrayList<String>();
+            listDataChild = new HashMap<String, List<String>>();
+            //String k = "";
+
+            try {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject ob = jsonArray.getJSONObject(i);
+                    String kelas = ob.getString("Nama");
+                    //k=kelas;
+                    listDataHeader.add(kelas);
+                    List<String> listChild = (new EnrollController()).getAllAsdosKelas(ob.getInt("Id"));
+                    listDataChild.put(kelas, listChild);
+                }
+            } catch(JSONException e){
+                e.printStackTrace();
+                //Toast.makeText(getApplicationContext(), k, Toast.LENGTH_LONG).show();
+            }
+
+            ExpandableListAdapter listAdapter = new ExpandableEnrollAdapter(PilihanController.this, listDataHeader, listDataChild, username);
+            expListView.setAdapter(listAdapter);
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        }
     }
 
     /**
@@ -723,7 +863,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
             JSONParser jsonParser = new JSONParser();
             String url = "http://ppl-a08.cs.ui.ac.id/role.php?fun=listrole&username=" + params[0];
             return (jsonParser.getJSONArrayFromUrl(url));
-        } 
+        }
 
         @Override
         protected void onPostExecute(JSONArray jsonArray) {
@@ -738,7 +878,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
     }
 
 
-    private class GetAllEnrollTask extends AsyncTask<String,Long,JSONArray>
+    /*private class GetAllEnrollTask extends AsyncTask<String,Long,JSONArray>
     {
         @Override
         protected JSONArray doInBackground(String... params) {
@@ -760,7 +900,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                         textView.setId(i);
                         //Toast.makeText(getApplicationContext(), jsonArray.getJSONObject(i).getString("Nama"), Toast.LENGTH_LONG).show();
                         textView.setText(jsonArray.getJSONObject(i).getString("Nama"));
-                        /*textView.setTextColor(getResources().getColor(R.color.dim_foreground_material_dark));*/
+                        *//*textView.setTextColor(getResources().getColor(R.color.dim_foreground_material_dark));*//*
                         linearLayout.addView(textView);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -768,5 +908,5 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                 }
             }
         }
-    }
+    }*/
 }

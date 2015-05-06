@@ -36,7 +36,8 @@ public class ProfileController extends Activity {
         //this.setMahasiswa();
     }
 
-    public ProfileController(){}
+    public ProfileController(){
+    }
 
     //getRole rian yang bikin tinggal manggil getListMenjabat dari menjabat controller
     public ArrayList<Menjabat> getRole(String username){
@@ -45,20 +46,16 @@ public class ProfileController extends Activity {
 
     public boolean cekAsdos(){
         //Toast.makeText(getApplicationContext(), Integer.toString(getMahasiswa(username).getStatus()), Toast.LENGTH_LONG).show();
-        return getMahasiswa(username).getStatus() != 0;
+        return getMahasiswa(username).getStatus() == 1;
     }
-
-//    public int getStatus(){
-//        return getMahasiswa(username).getStatus();
-//    }
 
     public boolean cekAdmin(){
-        return getMahasiswa(username).getStatus() == 2;
+        return getRole() == 2;
     }
 
-//    public String getNama(){
-//        return getMahasiswa(username).getName();
-//    }
+    public int getRole(){
+        return getMahasiswa(username).getStatus();
+    }
 
     public boolean punyaProfile(){
         Mahasiswa temp = getMahasiswa(username);
@@ -81,9 +78,6 @@ public class ProfileController extends Activity {
             HttpEntity entity = response.getEntity();
 
             is = entity.getContent();
-
-            String msg = "Berhasil";
-            //Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
@@ -94,10 +88,6 @@ public class ProfileController extends Activity {
             e.printStackTrace();
         }
     }
-
-//    public Mahasiswa getMahasiswa() {
-//        return mahasiswa;
-//    }
 
     public void setMahasiswa() {
         this.mahasiswa = getMahasiswa(username);
@@ -118,15 +108,5 @@ public class ProfileController extends Activity {
             return null;
         }
     }
-//
-//    private class GetMahasiswa extends AsyncTask<String,Long,JSONObject>{
-//
-//        @Override
-//        protected JSONObject doInBackground(String... params) {
-//            String url = "http://pplkelompok5.byethost14.com/mahasiswa.php?fun=getMahasiswa&Username=" + params[0];
-//            return (new JSONParser()).getJSONObjectFromUrl(url);
-//        }
-//
-//
-//    }
 }
+

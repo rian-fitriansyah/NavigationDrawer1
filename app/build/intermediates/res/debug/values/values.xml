@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="planets_array">
+        <item>Jadwal Asistensi</item>
+        <item>Profile</item>
+        <item>Kelas</item>
+        <item>Forum</item>
+        <item>Admin</item>
+        <item>Logout</item>
+
+    </string-array>
+    <!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="ColorPrimary">#2464ab</color>
+    <color name="ColorPrimaryDark">#E64A19</color>
+    <color name="actionbar_text">#FFFFFF</color>
+    <color name="background">#fbfbfb</color>
+    <color name="backgroundFoto">#91cef5</color>
+    <color id="black" name="black">#000000</color>
+    <color name="drawer_background">#eeeeee</color>
+    <color name="fontProfil">#000000</color>
+    <color name="grey">#aaaaaa</color>
+    <color name="listRole">#91cef5</color>
+    <color name="list_background_pressed">#dddddd</color>
+    <color name="list_divider">#777777</color>
+    <color name="list_selector">#dddddd</color>
+    <color name="transparent">#00000000</color>
+    <color name="twitter_blue">#00BFFF</color>
+    <color name="ubahFoto">#777777</color>
+    <color name="white">#FFFFFF</color>
+    <color name="whitedrawer">#f5f5f5</color>
+    <!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="toolbar_iconsize">55dip</dimen>
+    <!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="action_websearch">Web search</string>
+    <string name="agree">Ya</string>
+    <string name="app_name">SIASIS</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="asisten_dosen">Asisten Dosen</string>
+    <string name="cek_pref">Count</string>
+    <string name="dialog_confirm_profile">Apakah kamu ingin merubah profil?</string>
+    <string name="disagree">Tidak</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="emailMahasiswa">nama.mahasiswa@ui.ac.id</string>
+    <string name="email_pref">Email_Pref</string>
+    <string name="galeri">Galeri</string>
+    <string name="hapus_foto">Hapus Foto</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hp_pref">HP_Pref</string>
+    <string name="namaMahasiswa">Nama Mahasiswa</string>
+    <string name="nama_pref">Nama_Pref</string>
+    <string name="nohpMahasiswa">+62812345678</string>
+    <string name="npmMahasiswa">120XXXXXXX</string>
+    <string name="npm_pref">NPM_Pref</string>
+    <string name="path_foto">Photo</string>
+    <string name="profil">Profil</string>
+    <string name="profile_pref">Profile_Pref</string>
+    <string name="req_jadwal_asis">Request Jadwal Asistensi</string>
+    <string name="role">Role</string>
+    <string name="status_pref">Status_Pref</string>
+    <string name="title_activity_detail_qacontroller">DetailQAController</string>
+    <string name="title_activity_detail_req_controller">DetailReqController</string>
+    <string name="title_activity_edit_picture">EditPicture</string>
+    <string name="title_activity_form_q">FormQA</string>
+    <string name="title_activity_forum_polling">ForumPolling</string>
+    <string name="title_activity_forum_q">ForumQA</string>
+    <string name="title_activity_forum_request">ForumRequest</string>
+    <string name="title_activity_pilihan_controller">PilihanController</string>
+    <string name="title_activity_polling_controller">PollingController</string>
+    <string name="title_activity_qacontroller">QAController</string>
+    <string name="title_activity_request_controller">RequestController</string>
+    <string name="title_activity_request_role">RequestRole</string>
+    <string name="ubah_foto_profil">Ubah Foto Profil</string>
+    <!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <!-- <item name="colorPrimary">@color/twitter_blue</item> -->
+        <!-- Customize your theme here. --></style>
+</resources>

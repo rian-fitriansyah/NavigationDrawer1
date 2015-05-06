@@ -211,7 +211,7 @@ public class RoleController extends Activity {
 
                     final Button denny = new Button(getApplicationContext());
                     denny.setId(i);
-                    denny.setText("Denny");
+                    denny.setText("Deny");
                     //denny.setBackgroundColor(R.id.bla);
                     denny.setOnClickListener(new View.OnClickListener() {
                         @Override
