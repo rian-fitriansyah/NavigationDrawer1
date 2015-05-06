@@ -42,8 +42,8 @@ import java.util.List;
 public class KelasController extends Activity {
     private String username;
     private String op;
-    private JSONArray jsonArray;
     private LinearLayout linearMain;
+    SessionManager session;
 
     private ArrayList<Kelas> pilihan = new ArrayList<Kelas>();
 
@@ -60,7 +60,9 @@ public class KelasController extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        this.username = getIntent().getStringExtra("Username");
+        session = new SessionManager(getApplicationContext());
+        HashMap<String, String> detailMahasiswa = session.getUserDetails();
+        this.username = detailMahasiswa.get("username");
         this.op = getIntent().getStringExtra("View");
 
         if (op.equals("listKelas")) {
@@ -70,7 +72,7 @@ public class KelasController extends Activity {
             Button create = (Button) this.findViewById(R.id.button11);
             linearMain = (LinearLayout) findViewById(R.id.container);
 
-            new GetAllKelasTask().execute(linearMain);
+            new GetAllKelasTask(KelasController.this).execute(linearMain);
 
             create.setOnClickListener(new View.OnClickListener() {
 
@@ -90,11 +92,19 @@ public class KelasController extends Activity {
             Button ok = (Button) findViewById(R.id.button2);
             final EditText nama = (EditText) findViewById(R.id.editText);
 
-            if(!nama.getText().equals("") && nama.getText() != null){
-                ok.setOnClickListener(new View.OnClickListener() {
+            ok.setOnClickListener(new View.OnClickListener() {
 
-                    @Override
-                    public void onClick(View v) {
+                @Override
+                public void onClick(View v) {
+                    if(nama.getText().toString().equals("")){
+                        Toast.makeText(getApplicationContext(), "Hei Isi Namanya", Toast.LENGTH_LONG).show();
+                        nama.setHintTextColor(Color.parseColor("#FF0000"));
+                    } else if(nama.getText().toString().length() > 25) {
+                        nama.setText(null);
+                        nama.setHintTextColor(Color.parseColor("#FF0000"));
+                        nama.setHint("max 15 karakter");
+
+                    } else {
                         addKelas(nama.getText().toString());
                         Intent showDetails = new Intent(getApplicationContext(), KelasController.class);
                         showDetails.putExtra("Username", username);
@@ -102,19 +112,10 @@ public class KelasController extends Activity {
                         startActivity(showDetails);
                         finish();
                     }
-                });
-            } else {
-                Toast.makeText(getApplicationContext(), "Hei Isi Namanya", Toast.LENGTH_LONG).show();
-            }
-
+                }
+            });
         }
     }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        new GetAllKelasTask().execute(linearMain);
-//    }
 
     public void addKelas(String nama){
         List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
@@ -130,9 +131,6 @@ public class KelasController extends Activity {
             HttpEntity entity = response.getEntity();
 
             is = entity.getContent();
-
-            String msg = "Berhasil";
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
@@ -192,9 +190,6 @@ public class KelasController extends Activity {
             HttpEntity entity = response.getEntity();
 
             is = entity.getContent();
-
-            String msg = "Berhasil";
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
@@ -208,10 +203,23 @@ public class KelasController extends Activity {
 
     private class GetAllKelasTask extends AsyncTask<LinearLayout,Long,LinearLayout>
     {
-        ArrayList a;
+        private ProgressDialog dialog;
+        private KelasController activity;
+
+        public GetAllKelasTask(KelasController activity) {
+            this.activity = activity;
+            dialog = new ProgressDialog(this.activity);
+        }
+
         @Override
         protected LinearLayout doInBackground(LinearLayout... params) {
             return params[0];
+        }
+
+        protected void onPreExecute() {
+            this.dialog.setMessage("Sedang mengambil data...");
+            this.dialog.show();
+            this.dialog.setCancelable(false);
         }
 
         @Override
@@ -233,7 +241,8 @@ public class KelasController extends Activity {
                     TextView textView = new TextView(getApplicationContext());
                     textView.setId(i);
                     //Toast.makeText(getApplicationContext(), jsonArray.getJSONObject(i).getString("Nama"), Toast.LENGTH_LONG).show();
-                    textView.setText(pilihan.get(i).getNama());
+                    final String namaKelas = pilihan.get(i).getNama();
+                    textView.setText(namaKelas);
                     textView.setTextColor(getResources().getColor(R.color.black));
                     linearLayout.addView(textView);
 
@@ -243,16 +252,36 @@ public class KelasController extends Activity {
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            int pos = button.getId();
-                            int idKelas = pilihan.get(pos).getId();
-                            Toast.makeText(getApplicationContext(), idKelas + "", Toast.LENGTH_LONG).show();
-                            deleteKelas(idKelas);
-                            Intent showDetails = new Intent(getApplicationContext(), KelasController.class);
-                            //asumsi username gak null
-                            showDetails.putExtra("Username", username);
-                            showDetails.putExtra("View", "listKelas");
-                            startActivity(showDetails);
-                            finish();
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(KelasController.this);
+                            alertDialogBuilder.setTitle("Delete Class");
+                            alertDialogBuilder.setMessage("Are you sure you want to delete " + namaKelas + " ?").setCancelable(false)
+                                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                                            StrictMode.setThreadPolicy(policy);
+
+                                            int pos = button.getId();
+                                            int idKelas = pilihan.get(pos).getId();
+                                            Toast.makeText(getApplicationContext(), idKelas + "", Toast.LENGTH_LONG).show();
+                                            deleteKelas(idKelas);
+                                            Intent showDetails = new Intent(getApplicationContext(), KelasController.class);
+                                            //asumsi username gak null
+                                            showDetails.putExtra("Username", username);
+                                            showDetails.putExtra("View", "listKelas");
+                                            startActivity(showDetails);
+                                            finish();
+                                        }
+                                    })
+                                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.cancel();
+                                        }
+                                    });
+
+                            AlertDialog alertDialog = alertDialogBuilder.create();
+                            alertDialog.show();
                         }
                     });
                     linearLayout.addView(button);
@@ -261,7 +290,9 @@ public class KelasController extends Activity {
                 } scrollView.addView(linearLayout3);
                 a.addView(scrollView);
             }
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
         }
     }
-
 }
