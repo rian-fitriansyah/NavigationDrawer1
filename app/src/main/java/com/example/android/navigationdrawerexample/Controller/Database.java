@@ -15,7 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.example.android.navigationdrawerexample.R;
+=======
+import com.example.lenovo.pplnefri.R;
+>>>>>>> origin/master
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -126,4 +130,8 @@ public class Database extends Activity {
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

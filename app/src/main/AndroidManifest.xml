@@ -98,6 +98,7 @@
             android:name=".Controller.DetailReqController"
             android:label="@string/title_activity_detail_req_controller" >
         </activity>
+<<<<<<< HEAD
         <activity
             android:name=".Controller.RoleController"
             android:label="SIASIS" />
@@ -117,6 +118,8 @@
             android:name=".Controller.DetailPolController"
             android:label="DetailPollingController">
         </activity>
+=======
+>>>>>>> origin/master
         <activity android:label="SIASIS" android:name=".Controller.ProfileController"/>
         <activity android:label="SIASIS" android:name=".Controller.MenjabatController"/>
         <activity android:label="SIASIS" android:name=".Controller.RoleController"/>

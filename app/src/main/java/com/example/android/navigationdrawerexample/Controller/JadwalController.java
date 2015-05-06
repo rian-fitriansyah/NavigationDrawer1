@@ -117,8 +117,8 @@ public class JadwalController extends Activity {
                 @Override
                 public void onClick(View v) {
                     //bernilai true jika ia blm menghadiri
-                    if(cekMenghadiri(jadwalID, kelasID)) {
-                        addMenghadiri(jadwalID, kelasID);
+                    if(cekMenghadiri(jadwalID)) {
+                        addMenghadiri(jadwalID);
                         try {
                             jumlah.setText(Integer.toString(getJumlahMenghadiri(jadwalID, kelasID)));
                         } catch (JSONException e) {
@@ -157,7 +157,11 @@ public class JadwalController extends Activity {
             final EditText ruangan = (EditText) findViewById(R.id.editText5);
             final EditText deskripsi = (EditText) findViewById(R.id.editText6);
 
+<<<<<<< HEAD
             final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjabatKelas();
+=======
+final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjabatKelas();
+>>>>>>> origin/master
 
             if(getIntent().getIntExtra("Update", 0) == 1){
                 int namaKelas = getIntent().getIntExtra("KelasID", -1);
@@ -428,6 +432,7 @@ public class JadwalController extends Activity {
                         }
                     } else {
                         Toast.makeText(getApplicationContext(),"Pastikan isian valid",Toast.LENGTH_LONG).show();
+<<<<<<< HEAD
                     }
                 }
             });
@@ -453,49 +458,53 @@ public class JadwalController extends Activity {
                         startActivity(showDetails);
                     } catch (JSONException e) {
                         e.printStackTrace();
+=======
+>>>>>>> origin/master
+                    }
+                }
+            });
+        } else if(op.equals("partisipasi")){
+            setContentView(R.layout.list_hadir);
+
+            GetAllHadirListView = (ListView) findViewById(R.id.GetAllHadirListView);
+            kehadiran = (LinearLayout) findViewById(R.id.container);
+
+            //Toast.makeText(getApplicationContext(),getIntent().getIntExtra("JadwalID", -1) + "",Toast.LENGTH_LONG).show();
+
+            new GetHadir(JadwalController.this).execute(getIntent().getIntExtra("JadwalID", -1));
+
+<<<<<<< HEAD
+    public void addMenghadiri(int id_jadwal, int id_kelas){
+        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+        nameValuePairs.add(new BasicNameValuePair("Id_Kelas", Integer.toString(id_kelas)));
+        nameValuePairs.add(new BasicNameValuePair("Username", username));
+        nameValuePairs.add(new BasicNameValuePair("Id_Jadwal", Integer.toString(id_jadwal)));
+=======
+            GetAllHadirListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    try {
+                        //Toast.makeText(getApplicationContext(), "masuk ke klik",Toast.LENGTH_LONG).show();
+                        JSONObject mahasiswaClicked = mahasiswa.getJSONObject(position);
+                        String userMahasiswa = mahasiswaClicked.getString("Username");
+                        Intent showDetails = new Intent(getApplicationContext(), MenjabatController.class);
+                        showDetails.putExtra("Username", userMahasiswa);
+                        startActivity(showDetails);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 }
             });
         }
     }
 
-    public int getJumlahMenghadiri(int id_jadwal, int id_kelas) throws JSONException {
+>>>>>>> origin/master
 
-        String url = "http://ppl-a08.cs.ui.ac.id/jadwal.php?fun=jadwalJumlah&Id="+id_jadwal;
-
-        return (new JSONParser()).getJSONObjectFromUrl(url).getInt("Count");
+    public void getDetailJadwal(JadwalDetail jadwalDetail){
+        new GetJadwalDetails(JadwalController.this).execute(jadwalDetail);
     }
 
-    public void addMenghadiri(int id_jadwal, int id_kelas){
-        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
-        nameValuePairs.add(new BasicNameValuePair("Id_Kelas", Integer.toString(id_kelas)));
-        nameValuePairs.add(new BasicNameValuePair("Username", username));
-        nameValuePairs.add(new BasicNameValuePair("Id_Jadwal", Integer.toString(id_jadwal)));
-
-        InputStream is = null;
-        try {
-            HttpClient httpClient = new DefaultHttpClient();
-
-            HttpPost httpPost = new HttpPost("http://ppl-a08.cs.ui.ac.id/createMenghadiri.php");
-            httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            HttpResponse response = httpClient.execute(httpPost);
-            HttpEntity entity = response.getEntity();
-
-            is = entity.getContent();
-
-            String msg = "Berhasil";
-            //Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (ClientProtocolException e) {
-            Log.e("Client Protocol", "Log_Tag");
-            e.printStackTrace();
-        } catch (IOException e) {
-            Log.e("Log_Tag", "IOException");
-            e.printStackTrace();
-        }
-    }
-
+<<<<<<< HEAD
     public boolean cekMenghadiri(int id_jadwal, int id_kelas){
         String url = "http://ppl-a08.cs.ui.ac.id/jadwal.php?fun=cekHadir&Id="+id_jadwal+"&Id_Kelas="+id_kelas+"&Username="+username;
         return (new JSONParser()).getJSONObjectFromUrl(url) == null;
@@ -513,6 +522,16 @@ public class JadwalController extends Activity {
         toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/updateJadwal.php");
     }
 
+=======
+    public void addJadwal (List<NameValuePair> nameValuePairs){
+        toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/createJadwal.php");
+    }
+
+    public void updateJadwal (List<NameValuePair> nameValuePairs){
+        toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/updateJadwal.php");
+    }
+
+>>>>>>> origin/master
     public void toDatabase (List<NameValuePair> nameValuePairs, String url){
         InputStream is = null;
 

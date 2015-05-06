@@ -14,8 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.example.android.navigationdrawerexample.Model.Kelas;
-import com.example.android.navigationdrawerexample.R;
+import com.example.lenovo.pplnefri.Model.Kelas;
+import com.example.lenovo.pplnefri.R;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -140,7 +140,11 @@ public class EnrollController extends Activity{
                     CheckBox checkBox = new CheckBox(getApplicationContext());
                     checkBox.setId(i);
                     checkBox.setText(pilihan.get(i).getNama());
+<<<<<<< HEAD
                     //checkBox.setTextColor(getResources().getColor(R.color.dim_foreground_material_dark));
+=======
+                    checkBox.setTextColor(getResources().getColor(R.color.dim_foreground_material_dark));
+>>>>>>> origin/master
                     linearLayout3.addView(checkBox);
                     addKelas.add(checkBox);
                 } scrollView.addView(linearLayout3);
