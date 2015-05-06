@@ -17,11 +17,103 @@ import java.util.ArrayList;
 public class MenjabatController {
     private String username;
     private ArrayList<Menjabat> allMenjabat;
+    private TextView username_asdos;
+    private TextView nama;
+    private TextView npm;
+    private TextView hp;
+    private TextView email;
+    private LinearLayout linearMain;
 
     public MenjabatController(String username){
         this.username = username;
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+    }
+
+    public MenjabatController(){}
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        this.username = getIntent().getStringExtra("Username");
+
+        setContentView(R.layout.view_profile_personal);
+        username_asdos = (TextView) this.findViewById(R.id.username_mahasiswa);
+        nama = (TextView) this.findViewById(R.id.nama_mahasiswa);
+        npm = (TextView) this.findViewById(R.id.npm_mahasiswa);
+        hp = (TextView) this.findViewById(R.id.nohp_mahasiswa);
+        email = (TextView) this.findViewById(R.id.email_mahasiswa);
+        linearMain = (LinearLayout) findViewById(R.id.role);
+
+        new GetProfile(MenjabatController.this).execute(username);
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        finish();
+    }
+
+    private class GetProfile extends AsyncTask<String,Long,String>
+    {
+        private ProgressDialog dialog;
+        private MenjabatController activity;
+
+        public GetProfile(MenjabatController activity) {
+            this.activity = activity;
+            dialog = new ProgressDialog(this.activity);
+        }
+        @Override
+        protected String doInBackground(String... params) {
+            return params[0];
+        }
+
+        protected void onPreExecute() {
+            this.dialog.setMessage("Sedang mengambil data...");
+            this.dialog.show();
+            this.dialog.setCancelable(false);
+        }
+
+        @Override
+        protected void onPostExecute(String mahasiswa) {
+            Mahasiswa asdos = (new ProfileController()).getMahasiswa(mahasiswa);
+            ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjabatKelas();
+            username_asdos.setText(asdos.getUsername());
+            nama.setText(asdos.getName());
+            npm.setText(asdos.getNpm());
+            hp.setText(asdos.getHp());
+            email.setText(asdos.getEmail());
+
+            TextView role1 = new TextView(getApplicationContext());
+            role1.setText("Mahasiswa");
+            role1.setTextColor(getResources().getColor(R.color.black));
+            linearMain.addView(role1);
+            for(int i=0; i<arrayKelas.size(); i++){
+                TextView role = new TextView(getApplicationContext());
+                role.setText("Asisten Dosen: " + arrayKelas.get(i).getNama());
+                role.setTextColor(getResources().getColor(R.color.black));
+                linearMain.addView(role);
+            }
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        }
     }
 
     public void setMenjabat(){
@@ -45,7 +137,6 @@ public class MenjabatController {
         return this.allMenjabat;
     }
 
-    //pake parameter string username kalo udh bisa liat profile orang lain
     public ArrayList<Menjabat> getListMenjabat(){
         String url = "http://ppl-a08.cs.ui.ac.id/menjabat.php?fun=getMenjabat&username=" + this.username;
         JSONArray role = (new JSONParser()).getJSONArrayFromUrl(url);
@@ -63,7 +154,6 @@ public class MenjabatController {
         } return menjabat;
     }
 
-    //pake parameter string username kalo udh bisa liat profile orang lain
     public ArrayList<Kelas> getMenjabatKelas(){
         ArrayList<Menjabat> listMenjabat = getListMenjabat();
 
@@ -89,6 +179,4 @@ public class MenjabatController {
             }
         } return kelas;
     }
-
-    //tinggal getAsisten (iterasi 2)
 }
