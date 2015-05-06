@@ -40,9 +40,6 @@ import java.util.List;
  * Created by lenovo on 4/13/2015.
  */
 public class RoleController extends Activity {
-    private String username;
-    //private String op;
-    private JSONArray jsonArray;
     private LinearLayout linearMain;
 
     private ArrayList<RequestRole> pilihan = new ArrayList<RequestRole>();
@@ -53,18 +50,16 @@ public class RoleController extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        this.username = getIntent().getStringExtra("Username");
-
         setContentView(R.layout.approve_denny);
         linearMain = (LinearLayout) findViewById(R.id.container);
 
-        new GetAllRequestRoleTask().execute(linearMain);
+        new GetAllRequestRoleTask(RoleController.this).execute(linearMain);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        new GetAllRequestRoleTask().execute(linearMain);
+        new GetAllRequestRoleTask(RoleController.this).execute(linearMain);
     }
 
     public ArrayList<RequestRole> getAll(){
@@ -151,10 +146,23 @@ public class RoleController extends Activity {
 
     private class GetAllRequestRoleTask extends AsyncTask<LinearLayout,Long,LinearLayout>
     {
-        ArrayList a;
+        private ProgressDialog dialog;
+        private RoleController activity;
+
+        public GetAllRequestRoleTask(RoleController activity) {
+            this.activity = activity;
+            dialog = new ProgressDialog(this.activity);
+        }
+
         @Override
         protected LinearLayout doInBackground(LinearLayout... params) {
             return params[0];
+        }
+
+        protected void onPreExecute() {
+            this.dialog.setMessage("Sedang mengambil data...");
+            this.dialog.show();
+            this.dialog.setCancelable(false);
         }
 
         @Override
@@ -211,8 +219,7 @@ public class RoleController extends Activity {
 
                     final Button denny = new Button(getApplicationContext());
                     denny.setId(i);
-                    denny.setText("Denny");
-                    //denny.setBackgroundColor(R.id.bla);
+                    denny.setText("Deny");
                     denny.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -231,6 +238,9 @@ public class RoleController extends Activity {
                 }
                 scrollView.addView(linearLayout3);
                 a.addView(scrollView);
+            }
+            if (dialog.isShowing()) {
+                dialog.dismiss();
             }
         }
     }
