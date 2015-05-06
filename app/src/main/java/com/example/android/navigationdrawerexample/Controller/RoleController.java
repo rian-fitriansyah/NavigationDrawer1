@@ -1,6 +1,7 @@
 package com.example.android.navigationdrawerexample.Controller;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -220,10 +221,6 @@ public class RoleController extends Activity {
                     final Button denny = new Button(getApplicationContext());
                     denny.setId(i);
                     denny.setText("Deny");
-<<<<<<< HEAD
-                    //denny.setBackgroundColor(R.id.bla);
-=======
->>>>>>> origin/master
                     denny.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

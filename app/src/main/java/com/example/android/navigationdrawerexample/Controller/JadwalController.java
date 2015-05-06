@@ -77,7 +77,7 @@ public class JadwalController extends Activity {
         this.username = detailMahasiswa.get("username");
         this.op = getIntent().getStringExtra("View");
 
-        if (op.equals("detailJadwal")){
+        if (op.equals("detailJadwal")) {
             setContentView(R.layout.detail_jadwal);
 
             TextView judul = (TextView) this.findViewById(R.id.judul);
@@ -106,8 +106,7 @@ public class JadwalController extends Activity {
                 e.printStackTrace();
             }
 
-            if (jadwalID > 0 && kelasID > 0)
-            {
+            if (jadwalID > 0 && kelasID > 0) {
                 // we have customer ID passed correctly.
                 getDetailJadwal(jadwalDetail);
             }
@@ -117,8 +116,8 @@ public class JadwalController extends Activity {
                 @Override
                 public void onClick(View v) {
                     //bernilai true jika ia blm menghadiri
-                    if(cekMenghadiri(jadwalID)) {
-                        addMenghadiri(jadwalID);
+                    if (cekMenghadiri(jadwalID, kelasID)) {
+                        addMenghadiri(jadwalID, kelasID);
                         try {
                             jumlah.setText(Integer.toString(getJumlahMenghadiri(jadwalID, kelasID)));
                         } catch (JSONException e) {
@@ -137,7 +136,7 @@ public class JadwalController extends Activity {
                     startActivity(showDetails);
                 }
             });
-        } else if(op.equals("createJadwal")){
+        } else if (op.equals("createJadwal")) {
             setContentView(R.layout.form_jadwal);
 
             //username = (EditText) findViewById(R.id.editText8);
@@ -149,7 +148,7 @@ public class JadwalController extends Activity {
             final Calendar calendarMulai = Calendar.getInstance();
             final Calendar calendarSelesai = Calendar.getInstance();
 
-            final Spinner id_kelas = (Spinner)findViewById(R.id.spinner);
+            final Spinner id_kelas = (Spinner) findViewById(R.id.spinner);
             final EditText judul = (EditText) findViewById(R.id.editText);
             final TextView tanggal = (TextView) findViewById(R.id.textView8);
             final TextView mulai = (TextView) findViewById(R.id.textView9);
@@ -157,20 +156,17 @@ public class JadwalController extends Activity {
             final EditText ruangan = (EditText) findViewById(R.id.editText5);
             final EditText deskripsi = (EditText) findViewById(R.id.editText6);
 
-<<<<<<< HEAD
             final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjabatKelas();
-=======
-final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjabatKelas();
->>>>>>> origin/master
 
-            if(getIntent().getIntExtra("Update", 0) == 1){
+
+            if (getIntent().getIntExtra("Update", 0) == 1) {
                 int namaKelas = getIntent().getIntExtra("KelasID", -1);
-                for(int i=0; i<arrayKelas.size(); i++){
+                for (int i = 0; i < arrayKelas.size(); i++) {
                     RadioButton rbKelas = new RadioButton(getApplicationContext());
                     rbKelas.setId(arrayKelas.get(i).getId());
                     rbKelas.setText(arrayKelas.get(i).getNama());
                     rbKelas.setTextColor(getResources().getColor(R.color.black));
-                    if(namaKelas == arrayKelas.get(i).getId()){
+                    if (namaKelas == arrayKelas.get(i).getId()) {
                         rbKelas.setChecked(true);
                     }
                     id_kelas.addView(rbKelas);
@@ -188,7 +184,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                 rbKelas1.setTextColor(getResources().getColor(R.color.black));
                 rbKelas1.setChecked(true);
                 id_kelas.addView(rbKelas1);
-                for(int i=1; i<arrayKelas.size(); i++){
+                for (int i = 1; i < arrayKelas.size(); i++) {
                     RadioButton rbKelas = new RadioButton(getApplicationContext());
                     rbKelas.setId(arrayKelas.get(i).getId());
                     rbKelas.setText(arrayKelas.get(i).getNama());
@@ -201,7 +197,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
 
                 @Override
                 public void onClick(View v) {
-                    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener(){
+                    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
 
                         @Override
                         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -210,10 +206,10 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                             calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                             String t = dayOfMonth + "";
-                            String m = monthOfYear+1 + "";
-                            if(dayOfMonth < 10)
+                            String m = monthOfYear + 1 + "";
+                            if (dayOfMonth < 10)
                                 t = "0" + t;
-                            if(monthOfYear+1 < 10)
+                            if (monthOfYear + 1 < 10)
                                 m = "0" + m;
 
                             tanggal.setText(t + "-" + m + "-" + year);
@@ -230,7 +226,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
 
                 @Override
                 public void onClick(View v) {
-                    TimePickerDialog.OnTimeSetListener d = new TimePickerDialog.OnTimeSetListener(){
+                    TimePickerDialog.OnTimeSetListener d = new TimePickerDialog.OnTimeSetListener() {
 
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -240,7 +236,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
 
                             String sMinute;
 
-                            if((""+minute).length() == 1){
+                            if (("" + minute).length() == 1) {
                                 sMinute = "0" + minute;
                             } else {
                                 sMinute = "" + minute;
@@ -248,7 +244,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
 
                             String sHourOfDay;
 
-                            if((""+hourOfDay).length() == 1){
+                            if (("" + hourOfDay).length() == 1) {
                                 sHourOfDay = "0" + hourOfDay;
                             } else {
                                 sHourOfDay = "" + hourOfDay;
@@ -265,7 +261,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
 
                 @Override
                 public void onClick(View v) {
-                    TimePickerDialog.OnTimeSetListener d = new TimePickerDialog.OnTimeSetListener(){
+                    TimePickerDialog.OnTimeSetListener d = new TimePickerDialog.OnTimeSetListener() {
 
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -275,7 +271,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
 
                             String sMinute;
 
-                            if((""+minute).length() == 1){
+                            if (("" + minute).length() == 1) {
                                 sMinute = "0" + minute;
                             } else {
                                 sMinute = "" + minute;
@@ -283,7 +279,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
 
                             String sHourOfDay;
 
-                            if((""+hourOfDay).length() == 1){
+                            if (("" + hourOfDay).length() == 1) {
                                 sHourOfDay = "0" + hourOfDay;
                             } else {
                                 sHourOfDay = "" + hourOfDay;
@@ -313,61 +309,59 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                     String time = st.nextToken();
 
                     boolean temp = true;
-                    if(sJudul.equals("") || sJudul.trim().length() <= 0) {
+                    if (sJudul.equals("") || sJudul.trim().length() <= 0) {
                         //judul.setBackgroundColor(15918822);
                         judul.setHintTextColor(Color.parseColor("#FF0000"));
                         temp = false;
-                    } else if(sJudul.length() > 25){
+                    } else if (sJudul.length() > 25) {
                         judul.setText(null);
                         judul.setHintTextColor(Color.parseColor("#FF0000"));
                         judul.setHint("Asistensi UTS, max 25 karakter");
                     }
-                    if(tanggal.getText().toString().equals("") || tanggal.getText().toString().trim().length() <= 0){
+                    if (tanggal.getText().toString().equals("") || tanggal.getText().toString().trim().length() <= 0) {
                         //bTanggal.setBackgroundColor(15918822);
                         tanggal.setHintTextColor(Color.parseColor("#FF0000"));
                         temp = false;
                     }
-                    if(mulai.getText().toString().equals("") || mulai.getText().toString().trim().length() <= 0) {
+                    if (mulai.getText().toString().equals("") || mulai.getText().toString().trim().length() <= 0) {
                         //bMulai.setBackgroundColor(15918822);
                         mulai.setHintTextColor(Color.parseColor("#FF0000"));
                         temp = false;
                     }
-                    if(selesai.getText().toString().equals("") || selesai.getText().toString().trim().length() <= 0) {
+                    if (selesai.getText().toString().equals("") || selesai.getText().toString().trim().length() <= 0) {
                         //bSelesai.setBackgroundColor(15918822);
                         selesai.setHintTextColor(Color.parseColor("#FF0000"));
                         temp = false;
                     }
-                    if(sRuangan.equals("") || sRuangan.trim().length() <= 0){
+                    if (sRuangan.equals("") || sRuangan.trim().length() <= 0) {
                         //ruangan.setBackgroundColor(15918822);
                         ruangan.setHintTextColor(Color.parseColor("#FF0000"));
                         temp = false;
-                    } else if(sRuangan.length() > 10){
+                    } else if (sRuangan.length() > 10) {
                         ruangan.setText(null);
                         ruangan.setHintTextColor(Color.parseColor("#FF0000"));
                         ruangan.setHint("contoh: 2403, max 10 karakter");
                     }
-                    if(sDeskripsi.equals("") || sDeskripsi.trim().length() <= 0){
+                    if (sDeskripsi.equals("") || sDeskripsi.trim().length() <= 0) {
                         deskripsi.setHintTextColor(Color.parseColor("#FF0000"));
                         temp = false;
-                    } else if(sDeskripsi.length() > 255){
+                    } else if (sDeskripsi.length() > 255) {
                         deskripsi.setText(null);
                         deskripsi.setHintTextColor(Color.parseColor("#FF0000"));
                         deskripsi.setHint("contoh: 2403, max 10 karakter");
                     }
-                    if(tanggal.getText().toString().equals("Tanggal sudah berlalu")){
+                    if (tanggal.getText().toString().equals("Tanggal sudah berlalu")) {
                         tanggal.setTextColor(Color.parseColor("#FF0000"));
-                    }
-                    else if (!tanggal.getText().toString().equals("") && tanggal.getText().toString().compareTo(day) < 0) {
+                    } else if (!tanggal.getText().toString().equals("") && tanggal.getText().toString().compareTo(day) < 0) {
                         //bTanggal.setBackgroundColor(15918822);
                         tanggal.setText("Tanggal sudah berlalu");
                         tanggal.setTextColor(Color.parseColor("#FF0000"));
                         temp = false;
-                    }
-                    else if (!tanggal.getText().toString().equals("") && tanggal.getText().toString().compareToIgnoreCase(day) == 0){
+                    } else if (!tanggal.getText().toString().equals("") && tanggal.getText().toString().compareToIgnoreCase(day) == 0) {
                         tanggal.setTextColor(Color.parseColor("#000000"));
-                        if(mulai.getText().toString().equals("Waktu sudah berlalu")){
+                        if (mulai.getText().toString().equals("Waktu sudah berlalu")) {
                             mulai.setTextColor(Color.parseColor("#FF0000"));
-                        } else if(!mulai.getText().toString().equals("")){
+                        } else if (!mulai.getText().toString().equals("")) {
                             if (mulai.getText().toString().compareToIgnoreCase(time) <= 0) {
                                 //bMulai.setBackgroundColor(15918822);
                                 mulai.setText("Waktu sudah berlalu");
@@ -377,25 +371,22 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                                 mulai.setTextColor(Color.parseColor("#000000"));
                             }
                         }
-                    }
-                    else{
+                    } else {
                         tanggal.setTextColor(Color.parseColor("#000000"));
                         mulai.setTextColor(Color.parseColor("#000000"));
                     }
-                    if (selesai.getText().toString().equals("Belum dimulai")){
+                    if (selesai.getText().toString().equals("Belum dimulai")) {
                         selesai.setTextColor(Color.parseColor("#FF0000"));
-                    }
-                    else if (!selesai.getText().toString().equals("") && selesai.getText().toString().compareToIgnoreCase(mulai.getText().toString()) <= 0) {
+                    } else if (!selesai.getText().toString().equals("") && selesai.getText().toString().compareToIgnoreCase(mulai.getText().toString()) <= 0) {
                         //bSelesai.setBackgroundColor(15918822);
                         selesai.setText("Belum dimulai");
                         selesai.setTextColor(Color.parseColor("#FF0000"));
                         temp = false;
-                    }
-                    else{
+                    } else {
                         selesai.setTextColor(Color.parseColor("#000000"));
                     }
 
-                    if(temp){
+                    if (temp) {
                         String[] tTanggal = tanggal.getText().toString().split("-");
                         String sTanggal = tTanggal[2] + "-" + tTanggal[1] + "-" + tTanggal[0];
                         //Toast.makeText(getApplicationContext(),tanggal.getText().toString(),Toast.LENGTH_LONG).show();
@@ -412,8 +403,8 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                         nameValuePairs.add(new BasicNameValuePair("Ruangan", sRuangan));
                         nameValuePairs.add(new BasicNameValuePair("Deskripsi", sDeskripsi));
 
-                        if(getIntent().getIntExtra("Update", 0) == 1){
-                            nameValuePairs.add(new BasicNameValuePair("Id", getIntent().getIntExtra("JadwalID", -1)+""));
+                        if (getIntent().getIntExtra("Update", 0) == 1) {
+                            nameValuePairs.add(new BasicNameValuePair("Id", getIntent().getIntExtra("JadwalID", -1) + ""));
                             updateJadwal(nameValuePairs);
                             Intent showDetails = new Intent(getApplicationContext(), JadwalController.class);
                             showDetails.putExtra("JadwalID", getIntent().getIntExtra("JadwalID", -1));
@@ -422,8 +413,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                             showDetails.putExtra("View", "detailJadwal");
                             startActivity(showDetails);
                             finish();
-                        }
-                        else{
+                        } else {
                             addJadwal(nameValuePairs);
                             Intent showDetails = new Intent(getApplicationContext(), PilihanController.class);
                             showDetails.putExtra("Username", username);
@@ -431,12 +421,11 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                             finish();
                         }
                     } else {
-                        Toast.makeText(getApplicationContext(),"Pastikan isian valid",Toast.LENGTH_LONG).show();
-<<<<<<< HEAD
+                        Toast.makeText(getApplicationContext(), "Pastikan isian valid", Toast.LENGTH_LONG).show();
                     }
                 }
             });
-        } else if(op.equals("partisipasi")){
+        } else if (op.equals("partisipasi")) {
             setContentView(R.layout.list_hadir);
 
             GetAllHadirListView = (ListView) findViewById(R.id.GetAllHadirListView);
@@ -458,12 +447,10 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                         startActivity(showDetails);
                     } catch (JSONException e) {
                         e.printStackTrace();
-=======
->>>>>>> origin/master
                     }
                 }
             });
-        } else if(op.equals("partisipasi")){
+        } else if (op.equals("partisipasi")) {
             setContentView(R.layout.list_hadir);
 
             GetAllHadirListView = (ListView) findViewById(R.id.GetAllHadirListView);
@@ -472,14 +459,21 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
             //Toast.makeText(getApplicationContext(),getIntent().getIntExtra("JadwalID", -1) + "",Toast.LENGTH_LONG).show();
 
             new GetHadir(JadwalController.this).execute(getIntent().getIntExtra("JadwalID", -1));
+        }
+    }
 
-<<<<<<< HEAD
+    public int getJumlahMenghadiri(int id_jadwal, int id_kelas) throws JSONException {
+
+        String url = "http://ppl-a08.cs.ui.ac.id/jadwal.php?fun=jadwalJumlah&Id="+id_jadwal;
+
+        return (new JSONParser()).getJSONObjectFromUrl(url).getInt("Count");
+    }
+
     public void addMenghadiri(int id_jadwal, int id_kelas){
-        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
-        nameValuePairs.add(new BasicNameValuePair("Id_Kelas", Integer.toString(id_kelas)));
-        nameValuePairs.add(new BasicNameValuePair("Username", username));
-        nameValuePairs.add(new BasicNameValuePair("Id_Jadwal", Integer.toString(id_jadwal)));
-=======
+            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+            nameValuePairs.add(new BasicNameValuePair("Id_Kelas", Integer.toString(id_kelas)));
+            nameValuePairs.add(new BasicNameValuePair("Username", username));
+            nameValuePairs.add(new BasicNameValuePair("Id_Jadwal", Integer.toString(id_jadwal)));
             GetAllHadirListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -496,15 +490,7 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                 }
             });
         }
-    }
 
->>>>>>> origin/master
-
-    public void getDetailJadwal(JadwalDetail jadwalDetail){
-        new GetJadwalDetails(JadwalController.this).execute(jadwalDetail);
-    }
-
-<<<<<<< HEAD
     public boolean cekMenghadiri(int id_jadwal, int id_kelas){
         String url = "http://ppl-a08.cs.ui.ac.id/jadwal.php?fun=cekHadir&Id="+id_jadwal+"&Id_Kelas="+id_kelas+"&Username="+username;
         return (new JSONParser()).getJSONObjectFromUrl(url) == null;
@@ -522,16 +508,6 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
         toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/updateJadwal.php");
     }
 
-=======
-    public void addJadwal (List<NameValuePair> nameValuePairs){
-        toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/createJadwal.php");
-    }
-
-    public void updateJadwal (List<NameValuePair> nameValuePairs){
-        toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/updateJadwal.php");
-    }
-
->>>>>>> origin/master
     public void toDatabase (List<NameValuePair> nameValuePairs, String url){
         InputStream is = null;
 

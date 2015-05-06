@@ -60,9 +60,9 @@ import com.example.android.navigationdrawerexample.ForumRequest;
 import com.example.android.navigationdrawerexample.FragmentOne;
 import com.example.android.navigationdrawerexample.MainActivity;
 import com.example.android.navigationdrawerexample.Model.Mahasiswa;
-import com.example.android.navigationdrawerexample.R;
 import com.example.android.navigationdrawerexample.RequestRole;
 import com.example.android.navigationdrawerexample.ViewPicture;
+import com.example.android.navigationdrawerexample.R;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -108,21 +108,6 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
     private JSONArray jsonArray;
     private View rootView;
     Mahasiswa mahasiswa;
-    
-    private String username;
-    private int role;
-
-    private ExpandableListView GetAllJadwalListView;
-    private View view;
-
-    private ExpandableListView expListView;
-    private List<String> listDataHeader;
-    private HashMap<String, List<String>> listDataChild;
-    private List<String> listDataHeader2;
-    private HashMap<String, List<JSONObject>> listDataChild2;
-    private HashMap<String, String> detailMahasiswa;
-
-    SessionManager session;
 
     private String username;
     private int role;
@@ -619,11 +604,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         getActionBar().setTitle(mTitle);
     }
 
-<<<<<<< HEAD
-    private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
-=======
 private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
->>>>>>> origin/master
     {
         private ProgressDialog dialog;
         private PilihanController activity;

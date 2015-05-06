@@ -1,6 +1,5 @@
 package com.example.android.navigationdrawerexample.Controller;
 
-<<<<<<< HEAD
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,8 +14,6 @@ import android.widget.TextView;
 
 import com.example.android.navigationdrawerexample.R;
 
-=======
->>>>>>> origin/master
 import java.util.HashMap;
 import java.util.List;
 

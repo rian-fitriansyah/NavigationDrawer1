@@ -9,11 +9,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-<<<<<<< HEAD
 import com.example.android.navigationdrawerexample.R;
-=======
-import com.example.lenovo.pplnefri.R;
->>>>>>> origin/master
 
 import org.json.JSONException;
 import org.json.JSONObject;

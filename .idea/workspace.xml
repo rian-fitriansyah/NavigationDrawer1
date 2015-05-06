@@ -46,44 +46,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad1d9216-7b94-4859-8d8f-3c20684c218f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/Database.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/DetailPolController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/ForumPolling.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PollingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_polling_controller.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_child_pilihan_polling.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_forum_polling.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_polling_controller.xml" />
-      <change type="DELETED" beforePath="C:\Users\ASUS\Documents\Rian's Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\build\generated\source\buildConfig\androidTest\debug\com\example\android\navigationdrawerexample\test\BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ASUS\Documents\Rian's Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\build\intermediates\resources\resources-debug-androidTest.ap_" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\ASUS\Documents\Rian's Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\build\intermediates\res\debug\layout\list_hadir_cell" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\ASUS\Documents\Rian's Document\Materi Kuliah\Semester 6\Proyek Perangkat Lunak\Week 5\NavigationDrawer1\app\src\main\res\layout\list_hadir_cell" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_hadir_cell.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/Database.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/Database.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/EnrollController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/EnrollController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableEnrollAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableEnrollAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableJadwalAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableJadwalAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/JadwalController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/JadwalController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/KelasController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/KelasController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListJadwalAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListJadwalAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/MenjabatController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/MenjabatController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NavigationDrawer1.iml" afterPath="$PROJECT_DIR$/NavigationDrawer1.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ProfileController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ProfileController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/android/navigationdrawerexample/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/android/navigationdrawerexample/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RoleController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RoleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/SessionManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/SessionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/admin.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/admin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/detail_jadwal.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/detail_jadwal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/form_jadwal.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/form_jadwal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/form_kelas.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/form_kelas.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_jadwal.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_jadwal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_jadwal_cell.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_jadwal_cell.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_thread_request.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_thread_request.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/admin.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/admin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/child_enroll.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/child_enroll.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/detail_jadwal.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/detail_jadwal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/dialog_semester.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/dialog_semester.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/drawer_list_item.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/drawer_list_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/form_jadwal.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/form_jadwal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/form_kelas.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/form_kelas.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/fragment_planet.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/fragment_planet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_hadir.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_hadir.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_jadwal.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_jadwal.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_jadwal_cell.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_jadwal_cell.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_jadwal_parent.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_jadwal_parent.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/menu/main.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/menu/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/new_semester.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/new_semester.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/parent_enroll.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/parent_enroll.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/values-w820dp-v13/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/values-w820dp-v13/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NavigationDrawer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -127,146 +130,27 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="NavigationDrawer" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PilihanController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.7586207">
-              <caret line="453" column="55" selection-start-line="453" selection-start-column="55" selection-end-line="453" selection-end-column="55" />
-              <folding>
-                <element signature="e#6941#6961#0" expanded="true" />
-                <element signature="e#7030#7051#0" expanded="true" />
-                <element signature="e#10012#10038#0" expanded="true" />
-                <element signature="e#10385#10417#0" expanded="true" />
-                <element signature="e#10950#10979#0" expanded="true" />
-                <element signature="e#11014#11042#0" expanded="true" />
-                <element signature="e#11076#11106#0" expanded="true" />
-                <element signature="e#11142#11169#0" expanded="true" />
-                <element signature="e#11924#11939#0" expanded="true" />
-                <element signature="e#16191#16580#0" expanded="true" />
-                <element signature="e#16579#16580#0" expanded="true" />
-                <element signature="e#16653#18610#0" expanded="true" />
-                <element signature="e#18609#18610#0" expanded="true" />
-                <element signature="e#18662#19222#0" expanded="true" />
-                <element signature="e#19221#19222#0" expanded="true" />
-                <element signature="e#20921#21996#0" expanded="true" />
-                <element signature="e#21995#21996#0" expanded="true" />
-                <element signature="e#22050#22472#0" expanded="true" />
-                <element signature="e#22471#22472#0" expanded="true" />
-                <element signature="e#22663#24348#0" expanded="true" />
-                <element signature="e#23405#23801#0" expanded="true" />
-                <element signature="e#23800#23801#0" expanded="true" />
-                <element signature="e#23865#24267#0" expanded="true" />
-                <element signature="e#24266#24267#0" expanded="true" />
-                <element signature="e#24347#24348#0" expanded="true" />
-                <element signature="e#24586#27176#0" expanded="true" />
-                <element signature="e#25507#26098#0" expanded="true" />
-                <element signature="e#26097#26098#0" expanded="true" />
-                <element signature="e#26153#26664#0" expanded="true" />
-                <element signature="e#26663#26664#0" expanded="true" />
-                <element signature="e#26723#27085#0" expanded="true" />
-                <element signature="e#27084#27085#0" expanded="true" />
-                <element signature="e#27175#27176#0" expanded="true" />
-                <element signature="e#29668#29680#0" expanded="true" />
-                <element signature="e#34948#34980#0" expanded="true" />
-                <element signature="e#37831#38147#0" expanded="true" />
-                <element signature="e#38146#38147#0" expanded="true" />
-                <element signature="e#38224#39429#0" expanded="true" />
-                <element signature="e#39428#39429#0" expanded="true" />
-                <element signature="e#39503#39783#0" expanded="true" />
-                <element signature="e#39782#39783#0" expanded="true" />
-                <element signature="e#39857#40114#0" expanded="true" />
-                <element signature="e#40113#40114#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListJadwalAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListJadwalAdapter.java">
+      <file leaf-file-name="PilihanAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JadwalController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/JadwalController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33171913">
-              <caret line="92" column="57" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#23299#23314#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2089#3053#0" expanded="true" />
-                <element signature="e#3052#3053#0" expanded="true" />
-                <element signature="e#3140#3398#0" expanded="true" />
-                <element signature="e#3397#3398#0" expanded="true" />
-                <element signature="e#3598#3599#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnrollController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/EnrollController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="142" column="22" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1475#1485#0" expanded="true" />
-                <element signature="e#1541#1548#0" expanded="true" />
-                <element signature="e#2301#3239#0" expanded="true" />
-                <element signature="e#3238#3239#0" expanded="true" />
-                <element signature="e#3351#3359#0" expanded="true" />
-                <element signature="e#4371#4372#0" expanded="true" />
-                <element signature="e#4411#4412#0" expanded="true" />
-                <element signature="e#6085#6100#0" expanded="true" />
-                <element signature="e#7277#7292#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExpandableEnrollAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableEnrollAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1448#1449#0" expanded="true" />
-                <element signature="e#1484#1485#0" expanded="true" />
-                <element signature="e#2659#2660#0" expanded="true" />
-                <element signature="e#2695#2696#0" expanded="true" />
-                <element signature="e#3358#5037#0" expanded="true" />
-                <element signature="e#3807#4546#0" expanded="true" />
-                <element signature="e#4545#4546#0" expanded="true" />
-                <element signature="e#4601#4888#0" expanded="true" />
-                <element signature="e#4887#4888#0" expanded="true" />
-                <element signature="e#5036#5037#0" expanded="true" />
-                <element signature="e#5342#5343#0" expanded="true" />
-                <element signature="e#5370#5371#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -283,39 +167,90 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExpandableJadwalAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableJadwalAdapter.java">
+      <file leaf-file-name="PollingController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PollingController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_profile_personal.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_profile_personal.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="JadwalController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/JadwalController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.137931">
-              <caret line="103" column="39" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KelasController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/KelasController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="262" column="70" selection-start-line="262" selection-start-column="70" selection-end-line="262" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.33171913">
+              <caret line="92" column="57" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12198#12199#0" expanded="true" />
-                <element signature="e#12262#12589#0" expanded="true" />
-                <element signature="e#12588#12589#0" expanded="true" />
+                <element signature="e#19324#19339#0" expanded="true" />
+                <element signature="e#23726#23741#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ProfileController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QAController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/QAController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RequestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RoleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="222" column="42" selection-start-line="222" selection-start-column="42" selection-end-line="222" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/SessionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PilihanController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="723" column="85" selection-start-line="723" selection-start-column="85" selection-end-line="723" selection-end-column="85" />
+              <folding>
+                <element signature="e#0#42477#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#11924#11939#0" expanded="true" />
+                <element signature="e#29664#29676#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1144,7 +1079,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/view_thread_request.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RoleController.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/from_create_polling.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_forum_polling.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/view_thread_polling.xml" />
@@ -1159,15 +1093,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/ForumPolling.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/reply_isi_forum_polling.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/DetailPolController.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/Database.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanController.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/MenjabatController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/KelasController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/EnrollController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableJadwalAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/Database.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableEnrollAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/JadwalController.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableJadwalAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/KelasController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RoleController.java" />
       </list>
     </option>
   </component>
@@ -1243,24 +1178,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NavigationDrawer1" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1579,7 +1496,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1592,7 +1509,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39872408" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27609682" sideWeight="0.50132626" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2966507" sideWeight="0.49394855" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2966507" sideWeight="0.49394855" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20414673" sideWeight="0.4969743" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.49394855" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1660,168 +1577,207 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Profile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_hadir_cell.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="313" column="52" selection-start-line="313" selection-start-column="52" selection-end-line="313" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/QuestionAndAnswers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/RequestRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/reply_request.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="142" column="38" selection-start-line="142" selection-start-column="38" selection-end-line="142" selection-end-column="38" />
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_reply_req_cell.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/reply_qa.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="36" selection-start-line="111" selection-start-column="36" selection-end-line="111" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/DetailReqController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="113" selection-start-line="86" selection-start-column="78" selection-end-line="86" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/CustomDrawerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/SessionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/header.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/ViewPicture.java">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="10" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/approve_denny.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.862069">
-          <caret line="198" column="51" selection-start-line="198" selection-start-column="51" selection-end-line="198" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/JSONParser.java">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.034483">
-          <caret line="70" column="59" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/choose_forum.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="29.586206">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/ForumQA.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_request_controller.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="128" column="5" selection-start-line="24" selection-start-column="3" selection-end-line="128" selection-end-column="5" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_qacontroller.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_polling_controller.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_pilihan_controller.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_forum_request.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_forum_q.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_forum_polling.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_form_q.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_edit_picture.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_thread_request.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_thread_question.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="122" column="72" selection-start-line="122" selection-start-column="72" selection-end-line="122" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/reply_request.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/req_jadwal_asis_toolbar.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tool_bar.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ubah_ava.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_profile.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_profile_personal.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="103" column="39" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_profile_requestrole.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
@@ -1837,189 +1793,36 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-7.034483">
           <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_child_forum_pol.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableJadwalAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/QAController.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/CustomDrawerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="182" column="1" selection-start-line="182" selection-start-column="1" selection-end-line="182" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pertanyaan_toolbar.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/ForumRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87931037">
-          <caret line="73" column="47" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="142" column="48" selection-start-line="142" selection-start-column="48" selection-end-line="142" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudioProjects/sdk/sources/android-21/android/widget/ArrayAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.612068">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PollingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="50" selection-start-line="132" selection-start-column="50" selection-end-line="132" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_group_forum_pol.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.62069">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_polling_controller.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_child_pilihan_polling.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16776316">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/form_create_polling.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60855263">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/DetailQAController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_rep_pol.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListForumAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="51" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#921#922#0" expanded="false" />
-            <element signature="e#967#968#0" expanded="false" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1055#1056#0" expanded="false" />
-            <element signature="e#1112#1113#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListReplyReqAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#928#929#0" expanded="false" />
-            <element signature="e#974#975#0" expanded="false" />
-            <element signature="e#1031#1032#0" expanded="false" />
-            <element signature="e#1062#1063#0" expanded="false" />
-            <element signature="e#1119#1120#0" expanded="false" />
-            <element signature="e#1150#1151#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/reply_isi_forum_polling.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/ForumPolling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="51" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="51" />
-          <folding>
-            <element signature="e#1302#2526#0" expanded="false" />
-            <element signature="e#2525#2526#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1236#3599#0" expanded="true" />
+            <element signature="e#3598#3599#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2032,35 +1835,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/DetailQAController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="123" column="78" selection-start-line="123" selection-start-column="78" selection-end-line="123" selection-end-column="78" />
+          <caret line="97" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/DetailReqController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/DrawerItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/EnrollController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
-            <element signature="e#1614#1632#0" expanded="true" />
-            <element signature="e#1955#1992#0" expanded="true" />
-            <element signature="e#2094#2125#0" expanded="true" />
-            <element signature="e#2232#2269#0" expanded="true" />
-            <element signature="e#2376#2413#0" expanded="true" />
-            <element signature="e#3704#3750#0" expanded="true" />
-            <element signature="e#4079#4117#0" expanded="true" />
-            <element signature="e#4241#4284#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1475#1485#0" expanded="true" />
+            <element signature="e#1541#1548#0" expanded="true" />
+            <element signature="e#3351#3359#0" expanded="true" />
+            <element signature="e#6085#6100#0" expanded="true" />
+            <element signature="e#7277#7292#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/Database.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableEnrollAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2089#3053#0" expanded="true" />
-            <element signature="e#3052#3053#0" expanded="true" />
-            <element signature="e#3140#3398#0" expanded="true" />
-            <element signature="e#3397#3398#0" expanded="true" />
-            <element signature="e#3598#3599#0" expanded="true" />
+            <element signature="e#3358#5037#0" expanded="true" />
+            <element signature="e#3807#4546#0" expanded="true" />
+            <element signature="e#4545#4546#0" expanded="true" />
+            <element signature="e#4601#4888#0" expanded="true" />
+            <element signature="e#4887#4888#0" expanded="true" />
+            <element signature="e#5036#5037#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/JSONParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/KelasController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="262" column="70" selection-start-line="262" selection-start-column="70" selection-end-line="262" selection-end-column="70" />
+          <folding>
+            <element signature="e#12198#12199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListForumAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="51" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListHadirAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2072,76 +1932,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_profile_personal.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListQuestionAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.137931">
-          <caret line="103" column="39" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/EnrollController.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListReplyReqAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="142" column="22" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1475#1485#0" expanded="true" />
-            <element signature="e#1541#1548#0" expanded="true" />
-            <element signature="e#2301#3239#0" expanded="true" />
-            <element signature="e#3238#3239#0" expanded="true" />
-            <element signature="e#3351#3359#0" expanded="true" />
-            <element signature="e#4371#4372#0" expanded="true" />
-            <element signature="e#4411#4412#0" expanded="true" />
-            <element signature="e#6085#6100#0" expanded="true" />
-            <element signature="e#7277#7292#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableEnrollAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1448#1449#0" expanded="true" />
-            <element signature="e#1484#1485#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2695#2696#0" expanded="true" />
-            <element signature="e#3358#5037#0" expanded="true" />
-            <element signature="e#3807#4546#0" expanded="true" />
-            <element signature="e#4545#4546#0" expanded="true" />
-            <element signature="e#4601#4888#0" expanded="true" />
-            <element signature="e#4887#4888#0" expanded="true" />
-            <element signature="e#5036#5037#0" expanded="true" />
-            <element signature="e#5342#5343#0" expanded="true" />
-            <element signature="e#5370#5371#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ExpandableJadwalAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/KelasController.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ListReqAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="262" column="70" selection-start-line="262" selection-start-column="70" selection-end-line="262" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#12198#12199#0" expanded="true" />
-            <element signature="e#12262#12589#0" expanded="true" />
-            <element signature="e#12588#12589#0" expanded="true" />
-          </folding>
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2155,55 +1966,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PilihanController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.7586207">
-          <caret line="453" column="55" selection-start-line="453" selection-start-column="55" selection-end-line="453" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="723" column="85" selection-start-line="723" selection-start-column="85" selection-end-line="723" selection-end-column="85" />
           <folding>
-            <element signature="e#6941#6961#0" expanded="true" />
-            <element signature="e#7030#7051#0" expanded="true" />
-            <element signature="e#10012#10038#0" expanded="true" />
-            <element signature="e#10385#10417#0" expanded="true" />
-            <element signature="e#10950#10979#0" expanded="true" />
-            <element signature="e#11014#11042#0" expanded="true" />
-            <element signature="e#11076#11106#0" expanded="true" />
-            <element signature="e#11142#11169#0" expanded="true" />
+            <element signature="e#0#42477#0" expanded="true" />
+            <element signature="imports" expanded="true" />
             <element signature="e#11924#11939#0" expanded="true" />
-            <element signature="e#16191#16580#0" expanded="true" />
-            <element signature="e#16579#16580#0" expanded="true" />
-            <element signature="e#16653#18610#0" expanded="true" />
-            <element signature="e#18609#18610#0" expanded="true" />
-            <element signature="e#18662#19222#0" expanded="true" />
-            <element signature="e#19221#19222#0" expanded="true" />
-            <element signature="e#20921#21996#0" expanded="true" />
-            <element signature="e#21995#21996#0" expanded="true" />
-            <element signature="e#22050#22472#0" expanded="true" />
-            <element signature="e#22471#22472#0" expanded="true" />
-            <element signature="e#22663#24348#0" expanded="true" />
-            <element signature="e#23405#23801#0" expanded="true" />
-            <element signature="e#23800#23801#0" expanded="true" />
-            <element signature="e#23865#24267#0" expanded="true" />
-            <element signature="e#24266#24267#0" expanded="true" />
-            <element signature="e#24347#24348#0" expanded="true" />
-            <element signature="e#24586#27176#0" expanded="true" />
-            <element signature="e#25507#26098#0" expanded="true" />
-            <element signature="e#26097#26098#0" expanded="true" />
-            <element signature="e#26153#26664#0" expanded="true" />
-            <element signature="e#26663#26664#0" expanded="true" />
-            <element signature="e#26723#27085#0" expanded="true" />
-            <element signature="e#27084#27085#0" expanded="true" />
-            <element signature="e#27175#27176#0" expanded="true" />
-            <element signature="e#29668#29680#0" expanded="true" />
-            <element signature="e#34948#34980#0" expanded="true" />
-            <element signature="e#37831#38147#0" expanded="true" />
-            <element signature="e#38146#38147#0" expanded="true" />
-            <element signature="e#38224#39429#0" expanded="true" />
-            <element signature="e#39428#39429#0" expanded="true" />
-            <element signature="e#39503#39783#0" expanded="true" />
-            <element signature="e#39782#39783#0" expanded="true" />
-            <element signature="e#39857#40114#0" expanded="true" />
-            <element signature="e#40113#40114#0" expanded="true" />
+            <element signature="e#29664#29676#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/PollingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/ProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/QAController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="222" column="42" selection-start-line="222" selection-start-column="42" selection-end-line="222" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/navigationdrawerexample/Controller/SessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2213,7 +2041,8 @@
           <caret line="92" column="57" selection-start-line="92" selection-start-column="57" selection-end-line="92" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#23299#23314#0" expanded="true" />
+            <element signature="e#19324#19339#0" expanded="true" />
+            <element signature="e#23726#23741#0" expanded="true" />
           </folding>
         </state>
       </provider>
