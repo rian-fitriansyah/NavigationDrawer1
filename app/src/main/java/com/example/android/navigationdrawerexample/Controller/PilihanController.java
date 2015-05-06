@@ -102,10 +102,25 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
     List<DrawerItem> dataList;
 
-    private ListView GetAllJadwalListView, ListRole;
+    private ListView ListRole;
     private JSONArray jsonArray;
-    private View view,rootView;
+    private View rootView;
     Mahasiswa mahasiswa;
+    
+    private String username;
+    private int role;
+
+    private ExpandableListView GetAllJadwalListView;
+    private View view;
+
+    private ExpandableListView expListView;
+    private List<String> listDataHeader;
+    private HashMap<String, List<String>> listDataChild;
+    private List<String> listDataHeader2;
+    private HashMap<String, List<JSONObject>> listDataChild2;
+    private HashMap<String, String> detailMahasiswa;
+
+    SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +130,10 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        this.username = getIntent().getStringExtra("Username");
+        session = new SessionManager(getApplicationContext());
+        this.detailMahasiswa = session.getUserDetails();
+        this.username = detailMahasiswa.get("username");
+        this.role = Integer.parseInt(detailMahasiswa.get("role"));
 
         mTitle = mDrawerTitle = getTitle();
         mPlanetTitles = getResources().getStringArray(R.array.planets_array);
@@ -324,22 +342,12 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
         switch (position) {
             case 0:
-                ProfileController profileController = new ProfileController(username);
-                int status = 0;
-
-                if(profileController.punyaProfile()) {
-                    profileController.addMahasiswa(username);
-                } else if(profileController.cekAsdos()) {
-                    status = 1;
-                } else if(profileController.cekAdmin()) {
-                    status = 2;
-                }
-                final int finalStatus = status;
+                final int finalStatus = role;
                 fragment = new Fragment(){
                     @Override
                     public void onResume() {
                         super.onResume();
-                        new GetAllJadwalTask().execute(username);
+                        new GetAllJadwalTask(PilihanController.this).execute(username);
                     }
 
                     @Override
