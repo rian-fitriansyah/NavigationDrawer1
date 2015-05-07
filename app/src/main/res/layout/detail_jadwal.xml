@@ -147,6 +147,22 @@
         android:layout_width="fill_parent"
         android:layout_height="2dp"></LinearLayout>
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:text="Edit"
+            android:textColor="@color/white"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/ic_new_white"
+            android:background="@color/ColorPrimary"
+            android:id="@+id/button12"
+            android:layout_column="0" />
+    </LinearLayout>
+    <LinearLayout
         android:background="@color/whitedrawer"
         android:backgroundTint="@color/whitedrawer"
         android:layout_width="fill_parent"
@@ -183,9 +199,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="48dp"
                 android:textSize="20sp"
-                android:text="partisipan"
-                android:id="@+id/button6">
+                android:text="partisipan">
             </TextView>
         </RelativeLayout>
+        <Button
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:text="Partisipan"
+                android:textColor="@color/white"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_new_white"
+                android:background="@color/ColorPrimary"
+                android:id="@+id/button6"
+                android:layout_column="0" />
     </LinearLayout>
 </LinearLayout>
