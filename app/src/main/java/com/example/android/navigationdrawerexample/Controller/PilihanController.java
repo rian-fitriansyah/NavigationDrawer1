@@ -596,8 +596,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                 args.putInt("role", 4);
                 break;
             case 5:
-                Intent intent = new Intent (this, MainActivity.class);
-                startActivity(intent);
+                session.logoutUser();
                 finish();
                 return;
         }
@@ -619,12 +618,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         getActionBar().setTitle(mTitle);
     }
 
-<<<<<<< HEAD
-    private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
-=======
-private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
->>>>>>> origin/master
-    {
+    private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray> {
         private ProgressDialog dialog;
         private PilihanController activity;
 
