@@ -149,7 +149,7 @@ public class JadwalController extends Activity {
             final Calendar calendarMulai = Calendar.getInstance();
             final Calendar calendarSelesai = Calendar.getInstance();
 
-            final Spinner id_kelas = (Spinner)findViewById(R.id.spinner);
+            final RadioGroup id_kelas = (RadioGroup)findViewById(R.id.kelas);
             final EditText judul = (EditText) findViewById(R.id.editText);
             final TextView tanggal = (TextView) findViewById(R.id.textView8);
             final TextView mulai = (TextView) findViewById(R.id.textView9);
@@ -157,11 +157,7 @@ public class JadwalController extends Activity {
             final EditText ruangan = (EditText) findViewById(R.id.editText5);
             final EditText deskripsi = (EditText) findViewById(R.id.editText6);
 
-<<<<<<< HEAD
             final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjabatKelas();
-=======
-final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjabatKelas();
->>>>>>> origin/master
 
             if(getIntent().getIntExtra("Update", 0) == 1){
                 int namaKelas = getIntent().getIntExtra("KelasID", -1);
@@ -432,7 +428,6 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
                         }
                     } else {
                         Toast.makeText(getApplicationContext(),"Pastikan isian valid",Toast.LENGTH_LONG).show();
-<<<<<<< HEAD
                     }
                 }
             });
@@ -446,40 +441,6 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
 
             new GetHadir(JadwalController.this).execute(getIntent().getIntExtra("JadwalID", -1));
 
-            GetAllHadirListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    try {
-                        //Toast.makeText(getApplicationContext(), "masuk ke klik",Toast.LENGTH_LONG).show();
-                        JSONObject mahasiswaClicked = mahasiswa.getJSONObject(position);
-                        String userMahasiswa = mahasiswaClicked.getString("Username");
-                        Intent showDetails = new Intent(getApplicationContext(), MenjabatController.class);
-                        showDetails.putExtra("Username", userMahasiswa);
-                        startActivity(showDetails);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-=======
->>>>>>> origin/master
-                    }
-                }
-            });
-        } else if(op.equals("partisipasi")){
-            setContentView(R.layout.list_hadir);
-
-            GetAllHadirListView = (ListView) findViewById(R.id.GetAllHadirListView);
-            kehadiran = (LinearLayout) findViewById(R.id.container);
-
-            //Toast.makeText(getApplicationContext(),getIntent().getIntExtra("JadwalID", -1) + "",Toast.LENGTH_LONG).show();
-
-            new GetHadir(JadwalController.this).execute(getIntent().getIntExtra("JadwalID", -1));
-
-<<<<<<< HEAD
-    public void addMenghadiri(int id_jadwal, int id_kelas){
-        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
-        nameValuePairs.add(new BasicNameValuePair("Id_Kelas", Integer.toString(id_kelas)));
-        nameValuePairs.add(new BasicNameValuePair("Username", username));
-        nameValuePairs.add(new BasicNameValuePair("Id_Jadwal", Integer.toString(id_jadwal)));
-=======
             GetAllHadirListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -498,18 +459,42 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
         }
     }
 
->>>>>>> origin/master
-
-    public void getDetailJadwal(JadwalDetail jadwalDetail){
-        new GetJadwalDetails(JadwalController.this).execute(jadwalDetail);
+    public int getJumlahMenghadiri(int id_jadwal, int id_kelas) throws JSONException {
+        String url = "http://ppl-a08.cs.ui.ac.id/hadir.php?fun=jadwalJumlah&Id="+id_jadwal+"&Id_Kelas="+id_kelas;
+        return (new JSONParser()).getJSONObjectFromUrl(url).getInt("Count");
     }
 
-<<<<<<< HEAD
-    public boolean cekMenghadiri(int id_jadwal, int id_kelas){
-        String url = "http://ppl-a08.cs.ui.ac.id/jadwal.php?fun=cekHadir&Id="+id_jadwal+"&Id_Kelas="+id_kelas+"&Username="+username;
+    public boolean cekMenghadiri(int id_jadwal){
+        String url = "http://ppl-a08.cs.ui.ac.id/hadir.php?fun=cekHadir&Id="+id_jadwal+"&Username="+username;
         return (new JSONParser()).getJSONObjectFromUrl(url) == null;
     }
 
+    public void addMenghadiri(int id_jadwal){
+        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+        nameValuePairs.add(new BasicNameValuePair("Username", username));
+        nameValuePairs.add(new BasicNameValuePair("Id_Jadwal", Integer.toString(id_jadwal)));
+
+        InputStream is = null;
+        try {
+            HttpClient httpClient = new DefaultHttpClient();
+
+            HttpPost httpPost = new HttpPost("http://ppl-a08.cs.ui.ac.id/createMenghadiri.php");
+            httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+            HttpResponse response = httpClient.execute(httpPost);
+            HttpEntity entity = response.getEntity();
+
+            is = entity.getContent();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            Log.e("Client Protocol", "Log_Tag");
+            e.printStackTrace();
+        } catch (IOException e) {
+            Log.e("Log_Tag", "IOException");
+            e.printStackTrace();
+        }
+    }
+
     public void getDetailJadwal(JadwalDetail jadwalDetail){
         new GetJadwalDetails(JadwalController.this).execute(jadwalDetail);
     }
@@ -522,16 +507,6 @@ final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjab
         toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/updateJadwal.php");
     }
 
-=======
-    public void addJadwal (List<NameValuePair> nameValuePairs){
-        toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/createJadwal.php");
-    }
-
-    public void updateJadwal (List<NameValuePair> nameValuePairs){
-        toDatabase(nameValuePairs, "http://ppl-a08.cs.ui.ac.id/updateJadwal.php");
-    }
-
->>>>>>> origin/master
     public void toDatabase (List<NameValuePair> nameValuePairs, String url){
         InputStream is = null;
 
