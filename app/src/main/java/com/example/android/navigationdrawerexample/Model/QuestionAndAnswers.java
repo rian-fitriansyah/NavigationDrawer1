@@ -6,12 +6,12 @@ package com.example.android.navigationdrawerexample.Model;
 public class QuestionAndAnswers {
     private String id;
     private String idKelas;
-    private String username;
+    private String judul;
 
-    public QuestionAndAnswers(String id, String idKelas, String username) {
+    public QuestionAndAnswers(String id, String idKelas, String judul) {
         this.id = id;
         this.idKelas = idKelas;
-        this.username = username;
+        this.judul = judul;
     }
 
     public String getId() {
@@ -30,11 +30,11 @@ public class QuestionAndAnswers {
         this.idKelas = idKelas;
     }
 
-    public String getUsername() {
-        return username;
+    public String getJudul() {
+        return judul;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setJudul(String username) {
+        this.judul = judul;
     }
 }

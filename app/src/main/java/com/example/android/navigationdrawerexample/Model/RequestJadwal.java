@@ -11,7 +11,7 @@ public class RequestJadwal {
     private String username;
     private String idKelas;
 
-    public RequestJadwal(String id, String jam, String tanggal, String materi, String username, String idKelas) {
+    public RequestJadwal(String id, String idKelas, String tanggal, String materi) {
         this.id = id;
         this.jam = jam;
         this.tanggal = tanggal;

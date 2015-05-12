@@ -24,5 +24,12 @@
         android:id="@+id/button11"
         android:layout_gravity="center_horizontal" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forum"
+        android:id="@+id/button12"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
 <!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/layout/admin.xml -->

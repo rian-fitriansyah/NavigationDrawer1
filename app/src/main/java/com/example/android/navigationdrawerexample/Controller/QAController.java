@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.navigationdrawerexample.Model.Kelas;
+import com.example.android.navigationdrawerexample.Model.QuestionAndAnswers;
 import com.example.android.navigationdrawerexample.R;
 
 import org.apache.http.HttpEntity;
@@ -113,7 +114,7 @@ public class QAController extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_request_controller, menu);
+        getMenuInflater().inflate(R.menu.menu_qacontroller, menu);
         return true;
     }
 
@@ -175,6 +176,28 @@ public class QAController extends Activity {
             e.printStackTrace();
         }
         finish();
+    }
+
+    public QuestionAndAnswers createQA (String id, String idKelas, String judul){
+        return new QuestionAndAnswers (id, idKelas,judul);
+    }
+
+    public ArrayList<QuestionAndAnswers> getAllQA(){
+        ArrayList<QuestionAndAnswers> qa= new ArrayList<QuestionAndAnswers>();
+        String url = "http://ppl-a08.cs.ui.ac.id/question.php?fun=listallfaq";
+        JSONArray jsonArray = (new JSONParser()).getJSONArrayFromUrl(url);
+
+        if(jsonArray != null){
+            for (int i = 0; i < jsonArray.length(); i++) {
+                try {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    qa.add(createQA(Integer.toString(jsonObject.getInt("Id")),
+                            Integer.toString(jsonObject.getInt("Id_Kelas")),jsonObject.getString("Judul")));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }return qa;
     }
 
     public void finish (View view){

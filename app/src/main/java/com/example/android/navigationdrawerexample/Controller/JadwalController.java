@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
-import android.widget.Spinner;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -147,8 +147,7 @@ public class JadwalController extends Activity {
             final Calendar calendar = Calendar.getInstance();
             final Calendar calendarMulai = Calendar.getInstance();
             final Calendar calendarSelesai = Calendar.getInstance();
-
-            final Spinner id_kelas = (Spinner) findViewById(R.id.spinner);
+            final RadioGroup id_kelas = (RadioGroup)findViewById(R.id.kelas);
             final EditText judul = (EditText) findViewById(R.id.editText);
             final TextView tanggal = (TextView) findViewById(R.id.textView8);
             final TextView mulai = (TextView) findViewById(R.id.textView9);
@@ -422,6 +421,7 @@ public class JadwalController extends Activity {
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "Pastikan isian valid", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Pastikan isian valid",Toast.LENGTH_LONG).show();
                     }
                 }
             });
@@ -455,19 +455,16 @@ public class JadwalController extends Activity {
 
             GetAllHadirListView = (ListView) findViewById(R.id.GetAllHadirListView);
             kehadiran = (LinearLayout) findViewById(R.id.container);
-
-            //Toast.makeText(getApplicationContext(),getIntent().getIntExtra("JadwalID", -1) + "",Toast.LENGTH_LONG).show();
-
-            new GetHadir(JadwalController.this).execute(getIntent().getIntExtra("JadwalID", -1));
         }
     }
 
     public int getJumlahMenghadiri(int id_jadwal, int id_kelas) throws JSONException {
-
-        String url = "http://ppl-a08.cs.ui.ac.id/jadwal.php?fun=jadwalJumlah&Id="+id_jadwal;
+        String url = "http://ppl-a08.cs.ui.ac.id/hadir.php?fun=jadwalJumlah&Id="+id_jadwal+"&Id_Kelas="+id_kelas;
+        new GetHadir(JadwalController.this).execute(getIntent().getIntExtra("JadwalID", -1));
 
         return (new JSONParser()).getJSONObjectFromUrl(url).getInt("Count");
     }
+
 
     public void addMenghadiri(int id_jadwal, int id_kelas){
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
@@ -491,9 +488,35 @@ public class JadwalController extends Activity {
             });
         }
 
-    public boolean cekMenghadiri(int id_jadwal, int id_kelas){
-        String url = "http://ppl-a08.cs.ui.ac.id/jadwal.php?fun=cekHadir&Id="+id_jadwal+"&Id_Kelas="+id_kelas+"&Username="+username;
+    public boolean cekMenghadiri(int id_jadwal, int id_kelas) {
+        String url = "http://ppl-a08.cs.ui.ac.id/jadwal.php?fun=cekHadir&Id=" + id_jadwal + "&Id_Kelas=" + id_kelas + "&Username=" + username;
         return (new JSONParser()).getJSONObjectFromUrl(url) == null;
+    }
+
+    public void addMenghadiri(int id_jadwal){
+        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
+        nameValuePairs.add(new BasicNameValuePair("Username", username));
+        nameValuePairs.add(new BasicNameValuePair("Id_Jadwal", Integer.toString(id_jadwal)));
+
+        InputStream is = null;
+        try {
+            HttpClient httpClient = new DefaultHttpClient();
+
+            HttpPost httpPost = new HttpPost("http://ppl-a08.cs.ui.ac.id/createMenghadiri.php");
+            httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+            HttpResponse response = httpClient.execute(httpPost);
+            HttpEntity entity = response.getEntity();
+
+            is = entity.getContent();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            Log.e("Client Protocol", "Log_Tag");
+            e.printStackTrace();
+        } catch (IOException e) {
+            Log.e("Log_Tag", "IOException");
+            e.printStackTrace();
+        }
     }
 
     public void getDetailJadwal(JadwalDetail jadwalDetail){

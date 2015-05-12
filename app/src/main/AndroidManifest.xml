@@ -117,6 +117,14 @@
             android:name=".Controller.DetailPolController"
             android:label="DetailPollingController">
         </activity>
+        <activity
+            android:name=".AdminThread"
+            android:label="AdminThread">
+        </activity>
+        <activity
+            android:name=".RequestAsistensiFragment"
+            android:label="AdminThread">
+        </activity>
 
         <activity android:label="SIASIS" android:name=".Controller.ProfileController"/>
         <activity android:label="SIASIS" android:name=".Controller.MenjabatController"/>

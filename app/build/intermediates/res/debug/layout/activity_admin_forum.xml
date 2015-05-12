@@ -1,0 +1,6 @@
+<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</android.support.v4.view.ViewPager><!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/layout/activity_admin_forum.xml -->

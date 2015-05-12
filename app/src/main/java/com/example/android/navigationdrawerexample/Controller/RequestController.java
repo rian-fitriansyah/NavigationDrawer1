@@ -21,6 +21,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.android.navigationdrawerexample.Model.Kelas;
+import com.example.android.navigationdrawerexample.Model.RequestJadwal;
 import com.example.android.navigationdrawerexample.R;
 
 import org.apache.http.HttpEntity;
@@ -205,6 +206,10 @@ public class RequestController extends Activity {
         });
     }
 
+    public RequestJadwal createReq (String id, String idKelas, String tanggal, String materi){
+        return new RequestJadwal (id, idKelas, tanggal, materi);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -273,7 +278,27 @@ public class RequestController extends Activity {
         finish();
     }
 
+    public ArrayList<RequestJadwal> getAllReq(){
+        ArrayList<RequestJadwal> request= new ArrayList<RequestJadwal>();
+        String url = "http://ppl-a08.cs.ui.ac.id/request.php?fun=listallfaq";
+        JSONArray jsonArray = (new JSONParser()).getJSONArrayFromUrl(url);
+
+        if(jsonArray != null){
+            for (int i = 0; i < jsonArray.length(); i++) {
+                try {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    request.add(createReq(Integer.toString(jsonObject.getInt("Id")),
+                            Integer.toString(jsonObject.getInt("Id_Kelas")), jsonObject.getString("Tanggal"),
+                            jsonObject.getString("Materi")));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }return request;
+    }
+
     public void finish (View view){
         finish();
     }
+
 }

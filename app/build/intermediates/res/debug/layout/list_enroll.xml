@@ -31,14 +31,23 @@
             android:id="@+id/button"/>
 
     </LinearLayout>
-    <ScrollView
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:paddingTop="30dip"
-            android:background="@color/whitedrawer"/>
-    </ScrollView>
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="#f4f4f4" >
 
-</LinearLayout><!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/layout/list_enroll.xml -->
+        <ExpandableListView
+            android:id="@+id/lvExp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:paddingTop="30dip"
+        android:background="@color/whitedrawer"/>
+
+</LinearLayout>
+<!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/layout/list_enroll.xml -->

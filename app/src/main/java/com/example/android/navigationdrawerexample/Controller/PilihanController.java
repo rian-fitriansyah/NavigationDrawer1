@@ -49,20 +49,20 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.navigationdrawerexample.AdminThread;
 import com.example.android.navigationdrawerexample.ConfirmProfile;
+import com.example.android.navigationdrawerexample.ForumPolling;
 import com.example.android.navigationdrawerexample.ForumQA;
 import com.example.android.navigationdrawerexample.ForumRequest;
 import com.example.android.navigationdrawerexample.FragmentOne;
-import com.example.android.navigationdrawerexample.MainActivity;
 import com.example.android.navigationdrawerexample.Model.Mahasiswa;
+import com.example.android.navigationdrawerexample.R;
 import com.example.android.navigationdrawerexample.RequestRole;
 import com.example.android.navigationdrawerexample.ViewPicture;
-import com.example.android.navigationdrawerexample.R;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -135,6 +135,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         session = new SessionManager(getApplicationContext());
         this.detailMahasiswa = session.getUserDetails();
         this.username = detailMahasiswa.get("username");
+        this.detailMahasiswa.put("role","2");
         this.role = Integer.parseInt(detailMahasiswa.get("role"));
 
         mTitle = mDrawerTitle = getTitle();
@@ -260,10 +261,10 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                 MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        String sNama = ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).getText().toString();
-        String sNPM = ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).getText().toString();
-        String sEmail = ((EditText) rootView.findViewById(R.id.email_mahasiswa)).getText().toString();
-        String sNomor = ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).getText().toString();
+        String sNama = ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).getText().toString();
+        String sNPM = ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).getText().toString();
+        String sEmail = ((TextView) rootView.findViewById(R.id.email_mahasiswa)).getText().toString();
+        String sNomor = ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).getText().toString();
 
         editor.putString(getString(R.string.nama_pref), sNama);
         editor.putString(getString(R.string.npm_pref), sNPM);
@@ -271,15 +272,15 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         editor.putString(getString(R.string.hp_pref), sNomor);
         editor.commit();
 
-        ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).setText(sNama);
-        ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).setText(sNPM);
-        ((EditText) rootView.findViewById(R.id.email_mahasiswa)).setText(sEmail);
-        ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).setText(sNomor);
+        ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).setText(sNama);
+        ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setText(sNPM);
+        ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setText(sEmail);
+        ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setText(sNomor);
 
-        ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText(sNama);
+        /*((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText(sNama);
         ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setText(sNPM);
         ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setText(sEmail);
-        ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText(sNomor);
+        ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText(sNomor);*/
 
         List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
         nameValuePairs.add(new BasicNameValuePair("Nama", sNama));
@@ -309,16 +310,16 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
             e.printStackTrace();
         }
 
-        ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).setVisibility(View.INVISIBLE);
-        ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).setVisibility(View.INVISIBLE);
-        ((EditText) rootView.findViewById(R.id.email_mahasiswa)).setVisibility(View.INVISIBLE);
-        ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).setVisibility(View.INVISIBLE);
-        ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setVisibility(View.VISIBLE);
+        ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).setVisibility(View.INVISIBLE);
+        ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setVisibility(View.INVISIBLE);
+        ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setVisibility(View.INVISIBLE);
+        ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setVisibility(View.INVISIBLE);
+        /*((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setVisibility(View.VISIBLE);
         ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setVisibility(View.VISIBLE);
         ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setVisibility(View.VISIBLE);
         ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setVisibility(View.VISIBLE);
         ((ImageView) rootView.findViewById(R.id.buttonDone)).setVisibility(View.INVISIBLE);
-        ((ImageView) rootView.findViewById(R.id.buttonProfile)).setVisibility(View.VISIBLE);
+        ((ImageView) rootView.findViewById(R.id.buttonProfile)).setVisibility(View.VISIBLE);*/
     }
 
     @Override
@@ -496,6 +497,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
                         Button buttonForumReply = (Button) view.findViewById(R.id.choose_forum_1);
                         Button buttonForumForum = (Button) view.findViewById(R.id.choose_forum_2);
+                        Button buttonForumPolling = (Button) view.findViewById(R.id.choose_forum_3);
 
                         buttonForumReply.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -510,6 +512,15 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                             @Override
                             public void onClick(View v) {
                                 Intent intent = new Intent (getActivity(), ForumRequest.class);
+                                intent.putExtra("Username", username);
+                                startActivity(intent);
+                            }
+                        });
+
+                        buttonForumPolling.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent (getActivity(), ForumPolling.class);
                                 intent.putExtra("Username", username);
                                 startActivity(intent);
                             }
@@ -538,6 +549,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                             Button kelas = (Button) view.findViewById(R.id.button9);
                             Button role = (Button) view.findViewById(R.id.button10);
                             Button database = (Button) view.findViewById(R.id.button11);
+                            Button forum = (Button) view.findViewById(R.id.button12);
 
                             kelas.setOnClickListener(new View.OnClickListener() {
 
@@ -571,6 +583,16 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                                     startActivity(showDetails);
                                 }
                             });
+
+                            forum.setOnClickListener(new View.OnClickListener() {
+
+                                @Override
+                                public void onClick(View v) {
+
+                                    Intent showDetails = new Intent(getActivity(), AdminThread.class);
+                                    startActivity(showDetails);
+                                }
+                            });
                             return view;
                         }
                     };
@@ -581,8 +603,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                 args.putInt("role", 4);
                 break;
             case 5:
-                Intent intent = new Intent (this, MainActivity.class);
-                startActivity(intent);
+                session.logoutUser();
                 finish();
                 return;
         }
@@ -604,8 +625,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         getActionBar().setTitle(mTitle);
     }
 
-private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
-    {
+    private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray> {
         private ProgressDialog dialog;
         private PilihanController activity;
 
@@ -780,31 +800,31 @@ private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
             int stats = sharedPreferences.getInt(getString(R.string.status_pref), defaultI);*/
 
             if (mahasiswa.getUsername() != null){
-                ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText(mahasiswa.getName());
+                /*((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText(mahasiswa.getName());
                 ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setText(mahasiswa.getNpm());
                 ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setText(mahasiswa.getEmail());
-                ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText(mahasiswa.getHp());
+                ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText(mahasiswa.getHp());*/
 
-                ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).setText(mahasiswa.getName());
-                ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).setText(mahasiswa.getNpm());
-                ((EditText) rootView.findViewById(R.id.email_mahasiswa)).setText(mahasiswa.getEmail());
-                ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).setText(mahasiswa.getHp());
+                ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).setText(mahasiswa.getName());
+                ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setText(mahasiswa.getNpm());
+                ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setText(mahasiswa.getEmail());
+                ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setText(mahasiswa.getHp());
 
                 if (mahasiswa.getPath() != null)
                     ((ImageButton) rootView.findViewById(R.id.foto_profil)).setBackgroundDrawable(new BitmapDrawable(BitmapFactory.decodeFile(mahasiswa.getPath())));
-                ListRole = (ListView) rootView.findViewById(R.id.list_role);
+                /*ListRole = (ListView) rootView.findViewById(R.id.list_role);*/
 
-                new GetAllRole().execute(username);
+                /*new GetAllRole().execute(username);*/
             }else{
-                ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText("");
+                /*((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText("");
                 ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setText("");
                 ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setText("");
-                ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText("");
+                ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText("");*/
 
-                ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).setText("");
-                ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).setText("");
-                ((EditText) rootView.findViewById(R.id.email_mahasiswa)).setText("");
-                ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).setText("");
+                ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).setText("");
+                ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setText("");
+                ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setText("");
+                ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setText("");
             }
 
 
@@ -817,13 +837,13 @@ private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
                 }
             });
 
-            rootView.findViewById(R.id.buttonProfile).setOnClickListener(new View.OnClickListener() {
+            /*rootView.findViewById(R.id.buttonProfile).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).setVisibility(View.VISIBLE);
-                    ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).setVisibility(View.VISIBLE);
-                    ((EditText) rootView.findViewById(R.id.email_mahasiswa)).setVisibility(View.VISIBLE);
-                    ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).setVisibility(View.VISIBLE);
+                    ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).setVisibility(View.VISIBLE);
+                    ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setVisibility(View.VISIBLE);
+                    ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setVisibility(View.VISIBLE);
+                    ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setVisibility(View.VISIBLE);
                     ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setVisibility(View.INVISIBLE);
                     ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setVisibility(View.INVISIBLE);
                     ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setVisibility(View.INVISIBLE);
@@ -840,7 +860,7 @@ private class GetAllJadwalTask extends AsyncTask<String,Long,JSONArray>
                     dialog.show(getFragmentManager(), "ConfirmProfile");
                 }
 
-            });
+            });*/
 
             rootView.findViewById(R.id.buttonRole).setOnClickListener(new View.OnClickListener() {
                 @Override

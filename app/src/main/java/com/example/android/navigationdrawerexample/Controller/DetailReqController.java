@@ -61,8 +61,6 @@ public class DetailReqController extends Activity {
 
         new GetAllReplyReq().execute(username);
 
-
-
         RequestDetail requestDetail= new RequestDetail(kelas, judul, deskripsi, tanggal, threadID, kelasID);
 
         //this.username = getIntent().getStringExtra("Username");

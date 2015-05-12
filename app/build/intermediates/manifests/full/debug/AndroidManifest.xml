@@ -118,6 +118,14 @@
             android:label="DetailPollingController" >
         </activity>
         <activity
+            android:name="com.example.android.navigationdrawerexample.AdminThread"
+            android:label="AdminThread" >
+        </activity>
+        <activity
+            android:name="com.example.android.navigationdrawerexample.RequestAsistensiFragment"
+            android:label="AdminThread" >
+        </activity>
+        <activity
             android:name="com.example.android.navigationdrawerexample.Controller.ProfileController"
             android:label="SIASIS" />
         <activity
