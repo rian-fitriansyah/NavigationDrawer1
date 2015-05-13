@@ -277,10 +277,10 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setText(sEmail);
         ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setText(sNomor);
 
-        /*((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText(sNama);
+        ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText(sNama);
         ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setText(sNPM);
         ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setText(sEmail);
-        ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText(sNomor);*/
+        ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText(sNomor);
 
         List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
         nameValuePairs.add(new BasicNameValuePair("Nama", sNama));
@@ -314,12 +314,12 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
         ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setVisibility(View.INVISIBLE);
         ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setVisibility(View.INVISIBLE);
         ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setVisibility(View.INVISIBLE);
-        /*((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setVisibility(View.VISIBLE);
+        ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setVisibility(View.VISIBLE);
         ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setVisibility(View.VISIBLE);
         ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setVisibility(View.VISIBLE);
         ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setVisibility(View.VISIBLE);
         ((ImageView) rootView.findViewById(R.id.buttonDone)).setVisibility(View.INVISIBLE);
-        ((ImageView) rootView.findViewById(R.id.buttonProfile)).setVisibility(View.VISIBLE);*/
+        ((ImageView) rootView.findViewById(R.id.buttonProfile)).setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -800,31 +800,31 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
             int stats = sharedPreferences.getInt(getString(R.string.status_pref), defaultI);*/
 
             if (mahasiswa.getUsername() != null){
-                /*((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText(mahasiswa.getName());
+                ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText(mahasiswa.getName());
                 ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setText(mahasiswa.getNpm());
                 ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setText(mahasiswa.getEmail());
-                ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText(mahasiswa.getHp());*/
+                ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText(mahasiswa.getHp());
 
-                ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).setText(mahasiswa.getName());
-                ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setText(mahasiswa.getNpm());
-                ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setText(mahasiswa.getEmail());
-                ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setText(mahasiswa.getHp());
+                ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).setText(mahasiswa.getName());
+                ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).setText(mahasiswa.getNpm());
+                ((EditText) rootView.findViewById(R.id.email_mahasiswa)).setText(mahasiswa.getEmail());
+                ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).setText(mahasiswa.getHp());
 
                 if (mahasiswa.getPath() != null)
                     ((ImageButton) rootView.findViewById(R.id.foto_profil)).setBackgroundDrawable(new BitmapDrawable(BitmapFactory.decodeFile(mahasiswa.getPath())));
-                /*ListRole = (ListView) rootView.findViewById(R.id.list_role);*/
+                ListRole = (ListView) rootView.findViewById(R.id.list_role);
 
-                /*new GetAllRole().execute(username);*/
+                new GetAllRole().execute(username);
             }else{
-                /*((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText("");
+                ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setText("");
                 ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setText("");
                 ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setText("");
-                ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText("");*/
+                ((TextView) rootView.findViewById(R.id.nohp_mahasiswaText)).setText("");
 
-                ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).setText("");
-                ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setText("");
-                ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setText("");
-                ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setText("");
+                ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).setText("");
+                ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).setText("");
+                ((EditText) rootView.findViewById(R.id.email_mahasiswa)).setText("");
+                ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).setText("");
             }
 
 
@@ -837,13 +837,13 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                 }
             });
 
-            /*rootView.findViewById(R.id.buttonProfile).setOnClickListener(new View.OnClickListener() {
+            rootView.findViewById(R.id.buttonProfile).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ((TextView) rootView.findViewById(R.id.nama_mahasiswa)).setVisibility(View.VISIBLE);
-                    ((TextView) rootView.findViewById(R.id.npm_mahasiswa)).setVisibility(View.VISIBLE);
-                    ((TextView) rootView.findViewById(R.id.email_mahasiswa)).setVisibility(View.VISIBLE);
-                    ((TextView) rootView.findViewById(R.id.nohp_mahasiswa)).setVisibility(View.VISIBLE);
+                    ((EditText) rootView.findViewById(R.id.nama_mahasiswa)).setVisibility(View.VISIBLE);
+                    ((EditText) rootView.findViewById(R.id.npm_mahasiswa)).setVisibility(View.VISIBLE);
+                    ((EditText) rootView.findViewById(R.id.email_mahasiswa)).setVisibility(View.VISIBLE);
+                    ((EditText) rootView.findViewById(R.id.nohp_mahasiswa)).setVisibility(View.VISIBLE);
                     ((TextView) rootView.findViewById(R.id.nama_mahasiswaText)).setVisibility(View.INVISIBLE);
                     ((TextView) rootView.findViewById(R.id.npm_mahasiswaText)).setVisibility(View.INVISIBLE);
                     ((TextView) rootView.findViewById(R.id.email_mahasiswaText)).setVisibility(View.INVISIBLE);
@@ -860,7 +860,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                     dialog.show(getFragmentManager(), "ConfirmProfile");
                 }
 
-            });*/
+            });
 
             rootView.findViewById(R.id.buttonRole).setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -80,6 +80,8 @@ public class JadwalController extends Activity {
         if (op.equals("detailJadwal")) {
             setContentView(R.layout.detail_jadwal);
 
+            Log.e("masuk","na");
+
             TextView judul = (TextView) this.findViewById(R.id.judul);
             TextView asisten = (TextView) this.findViewById(R.id.asisten);
             TextView hp = (TextView) this.findViewById(R.id.hp);
@@ -156,7 +158,6 @@ public class JadwalController extends Activity {
             final EditText deskripsi = (EditText) findViewById(R.id.editText6);
 
             final ArrayList<Kelas> arrayKelas = (new MenjabatController(username)).getMenjabatKelas();
-
 
             if (getIntent().getIntExtra("Update", 0) == 1) {
                 int namaKelas = getIntent().getIntExtra("KelasID", -1);
@@ -428,6 +429,7 @@ public class JadwalController extends Activity {
         } else if (op.equals("partisipasi")) {
             setContentView(R.layout.list_hadir);
 
+            Log.e("ko masuk","haha");
             GetAllHadirListView = (ListView) findViewById(R.id.GetAllHadirListView);
             kehadiran = (LinearLayout) findViewById(R.id.container);
 
@@ -450,17 +452,12 @@ public class JadwalController extends Activity {
                     }
                 }
             });
-        } else if (op.equals("partisipasi")) {
-            setContentView(R.layout.list_hadir);
-
-            GetAllHadirListView = (ListView) findViewById(R.id.GetAllHadirListView);
-            kehadiran = (LinearLayout) findViewById(R.id.container);
         }
     }
 
     public int getJumlahMenghadiri(int id_jadwal, int id_kelas) throws JSONException {
         String url = "http://ppl-a08.cs.ui.ac.id/hadir.php?fun=jadwalJumlah&Id="+id_jadwal+"&Id_Kelas="+id_kelas;
-        new GetHadir(JadwalController.this).execute(getIntent().getIntExtra("JadwalID", -1));
+        //new GetHadir(JadwalController.this).execute(getIntent().getIntExtra("JadwalID", -1));
 
         return (new JSONParser()).getJSONObjectFromUrl(url).getInt("Count");
     }
@@ -665,6 +662,7 @@ public class JadwalController extends Activity {
             if (dialog.isShowing()) {
                 dialog.dismiss();
             }
+
             if(mahasiswa != null) {
                 setListAdapterHadir(mahasiswa);
             } else {

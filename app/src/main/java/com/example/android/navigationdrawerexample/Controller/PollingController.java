@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.android.navigationdrawerexample.Model.Kelas;
+import com.example.android.navigationdrawerexample.Model.Polling;
 import com.example.android.navigationdrawerexample.R;
 
 import org.apache.http.HttpEntity;
@@ -226,4 +227,25 @@ public class PollingController extends Activity {
         baseAdapter.notifyDataSetChanged();
     }
 
+    public Polling createPolling (String id, String idKelas, String username){
+        return new Polling (id, idKelas, username);
+    }
+
+    public ArrayList<Polling> getAllPolling(){
+        ArrayList<Polling> poll= new ArrayList<Polling>();
+        String url = "http://ppl-a08.cs.ui.ac.id/polling.php?fun=listallfaq";
+        JSONArray jsonArray = (new JSONParser()).getJSONArrayFromUrl(url);
+
+        if(jsonArray != null){
+            for (int i = 0; i < jsonArray.length(); i++) {
+                try {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    poll.add(createPolling(Integer.toString(jsonObject.getInt("Id")),
+                            Integer.toString(jsonObject.getInt("Id_Kelas")), jsonObject.getString("Judul")));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }return poll;
+    }
 }

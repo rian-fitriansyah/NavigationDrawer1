@@ -140,7 +140,7 @@ public class EnrollController extends Activity{
                     CheckBox checkBox = new CheckBox(getApplicationContext());
                     checkBox.setId(i);
                     checkBox.setText(pilihan.get(i).getNama());
-                    //checkBox.setTextColor(getResources().getColor(R.color.dim_foreground_material_dark));
+                    checkBox.setTextColor(getResources().getColor(R.color.black));
                     linearLayout3.addView(checkBox);
                     addKelas.add(checkBox);
                 } scrollView.addView(linearLayout3);

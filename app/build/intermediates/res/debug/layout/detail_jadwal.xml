@@ -186,32 +186,32 @@
             android:layout_height="48dp"
             android:orientation="horizontal">
             <TextView
-                android:paddingLeft="10dp"
+                android:paddingLeft="130dp"
                 android:paddingTop="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="48dp"
                 android:textSize="24sp"
                 android:id="@+id/textView11"
-                android:layout_column="0"></TextView>
+                android:layout_column="0">
+            </TextView>
             <TextView
-                android:paddingLeft="25dp"
+                android:paddingLeft="150dp"
                 android:paddingTop="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="48dp"
                 android:textSize="20sp"
                 android:text="partisipan">
             </TextView>
-        </RelativeLayout>
-        <Button
+            <Button
                 android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
                 android:text="Partisipan"
                 android:textColor="@color/white"
                 android:layout_height="match_parent"
-                android:drawableStart="@drawable/ic_new_white"
-                android:background="@color/ColorPrimary"
                 android:id="@+id/button6"
                 android:layout_column="0" />
+        </RelativeLayout>
+
     </LinearLayout>
 </LinearLayout>
 <!-- From: file:/C:/Users/ASUS/Documents/Rian's%20Document/Materi%20Kuliah/Semester%206/Proyek%20Perangkat%20Lunak/Week%205/NavigationDrawer1/app/src/main/res/layout/detail_jadwal.xml -->

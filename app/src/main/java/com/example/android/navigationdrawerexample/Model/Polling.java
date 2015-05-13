@@ -9,13 +9,13 @@ import java.util.List;
 public class Polling {
     private String id;
     private String idKelas;
-    private String username;
+    private String judul;
     private List<Pilihan> pilihan;
 
-    public Polling(String id, String idKelas, String username, List<Pilihan> pilihan) {
+    public Polling(String id, String idKelas, String judul) {
         this.id = id;
         this.idKelas = idKelas;
-        this.username = username;
+        this.judul = judul;
         this.pilihan = pilihan;
     }
 
@@ -35,12 +35,12 @@ public class Polling {
         this.idKelas = idKelas;
     }
 
-    public String getUsername() {
-        return username;
+    public String getJudul() {
+        return judul;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setJudul(String judul) {
+        this.judul = judul;
     }
 
     public List<Pilihan> getPilihan() {
