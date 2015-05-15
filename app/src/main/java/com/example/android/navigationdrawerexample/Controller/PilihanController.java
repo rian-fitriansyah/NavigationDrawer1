@@ -357,7 +357,6 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
 
         switch (position) {
             case 0:
-                final int finalStatus = role;
                 fragment = new Fragment(){
                     @Override
                     public void onResume() {
@@ -375,7 +374,7 @@ public class PilihanController extends Activity implements ConfirmProfile.Confir
                         GetAllJadwalListView = (ExpandableListView) view.findViewById(R.id.GetAllJadwalListView);
                         ImageView buat = (ImageView) view.findViewById(R.id.button);
                         //Button pilihan = (Button) view.findViewById(R.id.button9);
-                        if(finalStatus == 0)
+                        if(role == 0)
                             buat.setVisibility(View.GONE);
                         else
                             buat.setVisibility(View.VISIBLE);
